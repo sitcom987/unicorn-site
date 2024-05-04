@@ -102,6 +102,8 @@ a {
 
 div.shape-container-1 {
     position: relative;
+    margin: -10px;
+    overflow-x: clip;
 }
 
 div.bg-shape {
@@ -213,6 +215,7 @@ div.intro-1-lg {
     width: calc(50% - 50px);
     mix-blend-mode: overlay;
     opacity: 0.9;
+    top:303px;
 }
 
 
