@@ -103,11 +103,13 @@ a {
 div.shape-container-1 {
     position: relative;
     margin: -10px;
-    overflow-x: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
 }
 
 div.shape-container-2 {
-    overflow-x: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
 }
 
 div.bg-shape {
