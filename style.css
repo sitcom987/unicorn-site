@@ -6,8 +6,8 @@ body {
 	font-family: "Ojuju", Arial, Helvetica, sans-serif;
     color: #FD358F;
     text-align: center;
-    margin: 10px;
-    padding: 5px;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -76,6 +76,7 @@ p.introplus {
     font-size: 4em;
     line-height: 0;
     margin: 50px 0 70px 0;
+    max-width: none;
 }
 
 p.fineprint {
@@ -102,12 +103,15 @@ a {
 
 div.shape-container-1 {
     position: relative;
-    margin: -10px;
+    width: 100%;
+    margin: 0;
     overflow-x: clip;
     overflow-y: visible;
 }
 
 div.shape-container-2 {
+    width: 100%;
+    margin: 0;
     overflow-x: clip;
     overflow-y: visible;
 }
@@ -368,7 +372,7 @@ div.faq-img-card > h2 {
     background-color: #FD358F;
     color: #FFFFFF;
     min-width: 250px;
-    max-width: 500px;
+    max-width: 650px;
     min-height: 160px;
     max-height: 250px;
     margin: 10px 10px 10px 0;
