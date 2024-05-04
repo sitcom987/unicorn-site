@@ -39,7 +39,7 @@ h3.challenge {
 
 h3.challenge-2 {
     font-size: 3em;
-    margin-bottom: 0;
+    margin: 80px 0 0 0;
     line-height: 60px;
 }
 
@@ -68,7 +68,7 @@ h5 {
 
 p {
     font-size: 1.1em;
-    max-width: 800;
+    max-width: 800px;
     margin: auto;
 }
 
@@ -85,7 +85,7 @@ p.fineprint {
 p.pink-1-lg {
     font-size: 10em;
     line-height: 0px;
-    margin: 10px 10px 80px 10px;
+    margin: auto;
     padding: 5px;
 }
 
@@ -103,7 +103,11 @@ a {
 div.shape-container-1 {
     position: relative;
     margin: -10px;
-    overflow-x: clip;
+    contain: paint;
+}
+
+div.shape-container-2 {
+    overflow-x: hidden;
 }
 
 div.bg-shape {
