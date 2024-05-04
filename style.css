@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+html { 
+    scroll-behavior: smooth; 
+}
 
 /* Text */
 body {
@@ -144,7 +147,7 @@ div.yellow-circle-1 {
 }
 
 div.pink-circle-1 {
-    width: 1000px;
+    width: 900px;
     height: 700px;
     transform: translate(150px, 30px);
     background-color: #FD358F;
@@ -156,8 +159,8 @@ div.pink-circle-1 {
 }
 
 @keyframes anim-p-1 {
-    0% {width: 1000px; height: 700px;}
-    100% {width: 700px; height: 900px;}
+    0% {width: 800px; height: 700px;}
+    100% {width: 1200px; height: 900px;}
 }
 
 div.yellow-circle-2 {
@@ -366,6 +369,7 @@ div.faq-img-card > h2 {
     justify-content: center;
     align-items: flex-start;
     align-content: flex-start;
+    margin-left: 10px;
 }
 
 .faq-card {
