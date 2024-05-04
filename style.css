@@ -1,0 +1,375 @@
+@charset "UTF-8";
+
+
+/* Text */
+body {
+	font-family: "Ojuju", Arial, Helvetica, sans-serif;
+    color: #FD358F;
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+}
+
+h1 {
+	font-size: 2em;
+    font-weight: 400;
+}
+
+h2 {
+	font-size: 2em;
+    font-weight: 500;
+    margin: 0;
+}
+
+h2.intro-title {
+    margin-top: 40px;
+    padding-left: 80px;
+    font-weight: 500;
+}
+
+h3 {
+	font-size: 2.2em;
+    font-weight: 400;
+}
+
+h3.challenge {
+    font-size: 3em;
+    margin-bottom: 58px;
+}
+
+h3.challenge-2 {
+    font-size: 3em;
+    margin-bottom: 0;
+    line-height: 60px;
+}
+
+h3.details {
+    color: #FFFFFF;
+    mix-blend-mode: overlay;
+    margin: 50px 0 10px 0;
+}
+
+h4 {
+    font-size: 10.5em;
+    font-weight: 800;
+    opacity: 30%;
+    mix-blend-mode: overlay;
+    z-index: 0;
+    margin: -50px 0 0 10px;
+    padding: 0;
+    border: none;
+    position: absolute;
+}
+
+h5 {
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+p.introplus {
+    font-size: 4em;
+    line-height: 0;
+    margin: 50px 0 70px 0;
+}
+
+p.fineprint {
+    font-size: 0.8em;
+}
+
+p.pink-1-lg {
+    font-size: 10em;
+    line-height: 0px;
+    margin: 10px 10px 80px 10px;
+    padding: 5px;
+}
+
+p.challenge-fine {
+    margin-top: 5px;
+}
+
+a {
+	color: #FD358F;
+    text-decoration: underline;
+}
+
+/* BG shapes */
+
+div.shape-container-1 {
+    position: relative;
+}
+
+div.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    margin: 0;
+    padding: 0;
+    filter: blur(50px);
+}
+
+div.yellow-circle-1 {
+    width: 500px;
+    height: 650px;
+    background-color: #FFFF5C;
+    background-image: linear-gradient(#FFEE33, #FFFF5C);
+    transform: rotate(20deg) translate(-220px,0px);
+    z-index: -2;
+    animation-name: anim-y-1;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes anim-y-1 {
+    0% {width: 500px; height: 650px;}
+    100% {width: 700px; height: 700px;}
+}
+
+div.pink-circle-1 {
+    width: 1000px;
+    height: 700px;
+    transform: translate(150px, 30px);
+    background-color: #FD358F;
+    z-index: -3;
+    animation-name: anim-p-1;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes anim-p-1 {
+    0% {width: 1000px; height: 700px;}
+    100% {width: 700px; height: 900px;}
+}
+
+div.yellow-circle-2 {
+    width: 250px;
+    height: 250px;
+    transform: translate(-100px, -250px);
+    background-color: #FFFF5C;
+    background-image: linear-gradient(#FFEE33, #FFFF5C);
+    z-index: -2;
+    animation-name: anim-y-2;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes anim-y-2 {
+    0% {width: 250px; height: 250px;}
+    100% {width: 500px; height: 350px;}
+}
+
+div.pink-circle-2 {
+    width: 1000px;
+    height: 250px;
+    transform: translate(25px, -120px);
+    background-color: #FD358F;
+    z-index: -3;
+    animation-name: anim-p-2;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes anim-p-2 {
+    0% {width: 1000px; height: 250px;}
+    100% {width: 1200px; height: 300px;}
+}
+
+
+/* First view */
+
+div.firstview {
+    height: 100vh;
+    color: #FFFFFF;
+}
+
+div.logo {
+    font-size: 1.2em;
+    mix-blend-mode: overlay;
+}
+
+.introduction {
+    line-height: 3em;
+    margin: 125px 0 0 0;
+    mix-blend-mode: overlay;
+    background: none;
+}
+
+div.intro-1-lg {
+    font-size: 10em;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    position:absolute;
+    width: calc(50% - 50px);
+    mix-blend-mode: overlay;
+    opacity: 0.9;
+}
+
+
+
+
+/* Pricing with buttons */
+
+button.join {
+    border: solid 3px #FFFFFF;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: "Ojuju", Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    color: #FFFFFF;
+    mix-blend-mode: overlay;
+    background: none;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.nooverlay {
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+}
+
+.subscription-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 15px;
+    width: 85%;
+    max-width: 400px;
+    border: 2px solid #FD358F;
+    border-radius: 14px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+div.subscription-white {
+    background-color: #FFFFFF;
+
+}
+
+div.subscription-pink {
+    background-color: #FD358F;
+    color:#FFFFFF;
+}
+
+p.membership-btn-txt {
+    font-size: 1.5em;
+}
+
+.sub-btn {
+    border: none;
+    padding: 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-family: "Ojuju", Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+button.pink {
+    color: #FFFFFF;
+    background-color: #FD358F;
+}
+
+button.white {
+    color:#FD358F;
+    background-color: #FFFFFF;
+}
+
+button:hover {
+    transform: scale(1.1);
+    mix-blend-mode: normal;
+}
+
+.membership-fineprint {
+    font-size: 0.9em;
+    display: inline;
+    margin: 0 0 10px 0;
+}
+
+
+/* FAQ cards */
+
+.faq-img-container {
+    width: 95%;
+    text-align: center;
+    margin: 0;
+    padding: 0 10px 0 10px;
+}
+
+.faq-img-card {
+    width: 45%;
+    min-height: 170px;
+    max-height: 450px;
+    margin: 10px;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 90%;
+    text-shadow: 2px 2px 4px #000000;
+    border-radius: 14px;
+}
+
+div.faq-img-card > h2 {
+    text-align: left;
+    padding: 0 0 0 10px;
+    color: #FFFFFF;
+}
+
+.faq-book {
+    background-image: url("./images/books.png");
+}
+
+.faq-event {
+    background-image: url("./images/events.jpeg");
+}
+
+.faq-membership {
+    background-image: url("./images/event.jpeg");
+}
+
+.faq-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.faq-card {
+    background-color: #FD358F;
+    color: #FFFFFF;
+    width: 95%;
+    margin: 10px 0 10px 0;
+    border-radius: 14px;
+}
+
+.faq-title {
+    text-align: left;
+    font-weight: 700;
+    font-size: 2.7em;
+    padding: 0 0 0 10px;
+    margin: 0;
+}
+
+.faq-body {
+    text-align: left;
+    padding: 0 0 20px 55px;
+    margin: 0;
+    position: relative;
+
+}
