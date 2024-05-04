@@ -103,7 +103,7 @@ a {
 div.shape-container-1 {
     position: relative;
     margin: -10px;
-    contain: paint;
+    overflow-x: hidden;
 }
 
 div.shape-container-2 {
@@ -219,7 +219,7 @@ div.intro-1-lg {
     width: calc(50% - 50px);
     mix-blend-mode: overlay;
     opacity: 0.9;
-    top:303px;
+    top:300px;
 }
 
 
