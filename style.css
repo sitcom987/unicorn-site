@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: "Ojuju", Arial, Helvetica, sans-serif;
+    src: url(/fonts/Ojuju.ttf) format("woff2-variations");
+}
+
 html { 
     scroll-behavior: smooth; 
 }
@@ -30,8 +35,8 @@ h2.intro-title {
 }
 
 h3 {
-	font-size: 2em;
-    font-weight: 300;
+	font-size: 2.6em;
+    font-weight: 600;
 }
 
 h3.challenge {
@@ -47,6 +52,8 @@ h3.challenge-2 {
 
 h3.details {
     color: #FFFFFF;
+    font-weight: 600;
+    font-size: 2.8em;
     mix-blend-mode: overlay;
     margin: 50px 0 10px 0;
 }
@@ -72,10 +79,15 @@ p {
     font-size: 1.1em;
     max-width: 800px;
     margin: auto;
+    font-weight: 400;
 }
 
 p.card {
     margin: 0 10px 40px 10px;
+}
+
+p.sub-bullet {
+    align-content: center;
 }
 
 p.fineprint {

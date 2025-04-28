@@ -3,25 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    //Lenis smooth scroll
-    // const lenis = new Lenis({
-    //     duration: 1.2
-    // });
-    // function raf(time) {
-    //     lenis.raf(time)
-    //     requestAnimationFrame(raf)
-    // };
-
-    // requestAnimationFrame(raf);
-
-
-    // //Lenis to Scrolltrigger
-    // lenis.on('scroll', ScrollTrigger.update)
-
-    // gsap.ticker.add((time) => {
-    //     lenis.raf(time * 2)
-    // });
-
 
     let leftCardItems = document.querySelectorAll('.cardimg');
     leftCardItems.forEach(function(item, index) {
@@ -50,6 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
         scrub: 1,
     });
 
+    //Font weight
+
     const animateChars = (chars, reverse = false) => {
         const staggerOptions = {
             each: 0.35,
@@ -64,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 ease: "none",
                 stagger: staggerOptions,
                 scrollTrigger: {
-                    trigger: chars[0].closet(".marquee-container"),
+                    trigger: chars[0].closet(".leftcontainer"),
                     start: 50% bottom,
                     end: "top top",
                     scrub: true,
@@ -73,13 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     };
 
-    //Font weight
-
     const splitText = new SplitType(".leftcard h2", {types: "chars"});
 
     const cardContainers = document.querySelectorAll(".leftcard");
 
-    cardContainers.forEach((container, index) => {
+    cardContainers.forEach((explainercards, index) => {
         let start = "0%";
         let end = "-15%";
 
@@ -88,23 +69,24 @@ document.addEventListener("DOMContentLoaded", function () {
             end = "10%";
         }
 
-        const card = container.querySelector(".leftcard");
-        const words = card.querySelector(".leftcard h2");
+        const card = explainercards.querySelector(".leftcontainer");
+        const words = explainercards.querySelector(".leftcard h2");
 
         gsap.fromTo(card, {
             x: start, 
         }, {
             x: end,
             scrollTrigger: {
-                trigger: container,
+                trigger: explainercards,
                 start: "top bottom",
                 end: "150% top",
                 scrub: true,
             },
 
         });
+
         words.forEach((word) => {
-            const chars = Array.from(word.quesrySelectorAll(".char"));
+            const chars = Array.from(word.querySelectorAll(".char"));
             if (chars.length) {
                 const reverse = index % 2 !== 0;
                 animateChars(chars, reverse);
