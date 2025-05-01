@@ -337,7 +337,6 @@ div.leftcard {
 div.rightcontainer {
     position: relative;
     flex-basis: 50%;
-    background-color: #FFF;
     justify-content: center;
     height: auto;
     min-width: 500px;
