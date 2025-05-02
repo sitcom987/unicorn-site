@@ -573,6 +573,7 @@ div.faq-img-card > h2 {
 
 div.socialcontainer {
     width: 100vw;
+    margin: 0 0 20px 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -583,9 +584,56 @@ div.socialcontainer {
 }
 
 div.socialicon {
+    display: block;
     width: 45px;
     padding: 15px;
-    
+}
+
+div.socialicontext {
+    width: 45px;
+    padding: 0 15px 0 15px;
+}
+
+.discord-logo {
+    background-image: url("./images/discord-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.instagram-logo {
+    background-image: url("./images/instagram-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.tiktok-logo {
+    background-image: url("./images/tiktok-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.youtube-logo {
+    background-image: url("./images/youtube-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.fb-sq-logo {
+    background-image: url("./images/facebook-sq-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.fb-rd-logo {
+    background-image: url("./images/facebook-round-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* Mobile */ 
