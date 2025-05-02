@@ -31,29 +31,36 @@ document.addEventListener("DOMContentLoaded", function () {
         scrub: 1,
     });
 
-    gsap.from(".fade", {duration: 3, opacity: 0, ease: "power2", stagger: 0.4, });
+    gsap.from(".fade", {
+        duration: 3, 
+        opacity: 0, 
+        ease: "power2", 
+        stagger: 0.4, 
+        });
+
 
     function init(){
 
-        gsap.to(".fade", {opacity: 0, duration: 2, 
-            scrollTrigger: {
-                trigger: ".fade",
-                start: "top bottom",
-                end: "bottom bottom",
-                toggleActions: "restart pause resume restart",
-                scrub: 1,
-            }
-        });
+        gsap.from(".fade", {opacity: 0, duration: 2,
+        scrollTrigger: {
+            trigger: ".fade",
+            markers: true,
+            start: "top top",
+            end: "bottom bottom",
+            toggleActions: "play none none restart",
+            scrub: 1,
+        }
+        }); 
 
-        const h1 = gsap.utils.toArray("h1");
-        h1.forEach(h1 => {
-            gsap.from(h1, {
+        const h2 = gsap.utils.toArray("h2");
+        h2.forEach(h2 => {
+            gsap.from(h2, {
                 opacity: 0,
                 duration: 2,
                 yPercent: 30,
                 scrub: 1.5,
                 scrollTrigger: {
-                    trigger: h1,
+                    trigger: h2,
                     start: "top bottom-=10%",
                     end: "top center",
                     toggleActions: "play none none reverse",
