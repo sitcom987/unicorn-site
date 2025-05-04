@@ -569,6 +569,16 @@ div.faq-img-card > h2 {
 
 }
 
+#footnotes {
+    background-color: #65012E;
+    color: #FD358F;
+    padding: 20px 0 10px 0;
+}
+
+#footnotes a {
+    color: #FD358F;
+}
+
 /* Social icons */
 
 div.socialcontainer {
