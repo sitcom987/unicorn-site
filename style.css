@@ -413,6 +413,10 @@ button.join-pink-small {
     mix-blend-mode: normal;
 }
 
+.op50 {
+    opacity: 45%;
+}
+
 .subscription-card {
     display: flex;
     flex-direction: row;
