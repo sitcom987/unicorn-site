@@ -513,7 +513,7 @@ div.faq-img-card > h2 {
 }
 
 .faq-book {
-    background-image: url("./images/books.png");
+    background-image: url("https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/books.png");
 }
 
 .bookz {
@@ -521,7 +521,7 @@ div.faq-img-card > h2 {
 }
 
 .faq-event {
-    background-image: url("./images/event-speakers.jpg");
+    background-image: url("https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/event-speakers.jpg");
 }
 
 .eventsz {
@@ -529,7 +529,7 @@ div.faq-img-card > h2 {
 }
 
 .faq-membership {
-    background-image: url("./images/party-cocktail.jpg");
+    background-image: url("https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/party-cocktail.jpg");
 }
 
 .membershipz {
