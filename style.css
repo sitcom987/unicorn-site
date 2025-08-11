@@ -133,6 +133,7 @@ p.fine-overlay {
 
 p.pagepar {
     margin: 12px 0 0 0;
+    max-width: none;
 }
 
 a {
