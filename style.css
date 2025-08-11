@@ -131,6 +131,10 @@ p.fine-overlay {
     padding: 0 0 10px 0;
 }
 
+p.pagepar {
+    margin: 12px 0 0 0;
+}
+
 a {
 	color: #FD358F;
     text-decoration: underline;
