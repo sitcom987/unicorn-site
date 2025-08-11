@@ -24,6 +24,12 @@ h1 {
     margin: 50px 0 50px 0
 }
 
+h1.pagetitle {
+    font-size: 3em;
+    color: #FFFFFF;
+    mix-blend-mode: overlay;
+}
+
 h2 {
 	font-size: 2.2em;
     font-weight: 500;
@@ -32,6 +38,11 @@ h2 {
 
 h2.intro-title {
     font-weight: 500;
+}
+
+h2.pageh2 {
+    font-size: 2em;
+    margin: 0 0 26px 0;
 }
 
 h3 {
@@ -123,6 +134,11 @@ p.fine-overlay {
 a {
 	color: #FD358F;
     text-decoration: underline;
+}
+
+.pagetitle a {
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 img {
