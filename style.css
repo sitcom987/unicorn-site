@@ -381,7 +381,7 @@ div.cardimg {
     overflow: hidden;
     background-size: cover;
     background-position: center;
-    opacity: 90%;
+    opacity: 100%;
     border-radius: 14px;
     position: absolute;
     
