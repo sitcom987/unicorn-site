@@ -81,3 +81,19 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.ticker.lagSmoothing(0); */
 
 });
+
+
+let readmorebox = document.querySelectorAll(".readmoretext");
+
+readmorebox.forEach(element => {
+    let button = element.querySelector("#readmorebtn");
+    button.onclick = function(){
+        element.classList.toggle("active");
+        button.classList.toggle("activebtn");
+        if(button.classList.contains("activebtn")){
+            button.innerHTML = "...Kevesebb 🦄...";
+        }else{
+            button.innerHTML = "...Több 🦄...";
+        }
+    }
+});
