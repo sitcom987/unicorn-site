@@ -85,7 +85,7 @@ h4 {
 
 h5 {
     font-size: 1.5em;
-    margin: 10px 0 10px 0;
+    margin: 10px 10px 10px 0;
 }
 
 p {
@@ -500,6 +500,49 @@ button:hover {
     mix-blend-mode: normal;
 }
 
+.buy-btn {
+    border: none;
+    padding: 10px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: #000000;
+    border-radius: 4px;
+    margin: 0 10px 0 10px;
+    cursor: pointer;
+}
+
+.buy-btn:hover {
+    transform: none;
+    
+}
+
+.revolut {
+    padding: 10px 45px;
+    background-color: #000000;
+    border-radius: 4px;
+    display: inline;
+    width: 90px;
+}
+
+.revolutbtn {
+    background-color:black;
+    border-radius: 4px;
+    width: 110px;
+    display: flex;
+    margin: 0 10px 0 10px;
+}
+
+.buybtns {
+    display: flex;
+    justify-content: center;
+}
+
+
 .membership-fineprint {
     font-size: 0.9em;
     display: inline;
@@ -696,9 +739,12 @@ div.socialicontext {
 
 .readmorecontainer {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+    margin: 0 20px 0 20px;
     overflow-y: auto;
     background-color: #FFFFFF;
+    text-align: center;
 }
 
 .readmorebox {
@@ -769,8 +815,76 @@ div.socialicontext {
     background-color: #FD358F;
     color: #FFFFFF;
     z-index: 2;
-    padding: 15px 20px 0 20px;
+    padding: 15px 20px 10px 20px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
     
+}
+
+.ticketcontainer {
+    width: 100%;
+    height: auto;
+    margin: 20px 20px 0 20px;
+}
+
+.ticketitem {
+    width: 85%;
+    margin: 10px 0 10px 0;
+    padding: 0 0 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 2px solid #FD358F;
+    border-radius: 14px;
+}
+
+.ticketitem > a {
+    margin: 0 0 0 35px;
+}
+
+.eventdetails {
+    padding: 0 20px 0 20px;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.eventtitle {
+    width: 100%;
+}
+
+.eventdate {
+    text-align: left;
+    display: block;
+    justify-content: left;
+    width: 100%;
+    font-family: "Figtree", Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    color: #65012E;
+}
+
+.eventlocation {
+    text-align: left;
+    display: block;
+    justify-content: left;
+    width: 100%;
+    font-family: "Figtree", Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+}
+
+.eventdate > p {
+    font-weight: 400;
+    text-align: left;
+}
+
+.eventlocation > p {
+    font-weight: 400;
+    text-align: left;
+}
+
+.pagemoreinfoscontainer {
+    margin: 0 20px 0 20px;
 }
 
 /* Mobile */ 
@@ -787,4 +901,34 @@ div.socialicontext {
     div.parallaxcontainer {
         display: none;
     }
+
+    .readmorecontainer {
+        padding: 20px 20px 20px 20px;
+    }
+
+    .readmorebox {
+        width: 90%;
+        max-width: 100%;
+        padding: 20px 50px 20px 50px;
+    }
+
+    h2.pageh2 {
+        text-align: center;
+    }
+
+    p.pagepar {
+        text-align: center;
+    }
+
+    .eventdetails {
+    justify-content: center;
+}
+    .eventdate {
+        display: flex;
+    }
+
+    .eventlocation {
+        display: flex;
+    }
+
 }
