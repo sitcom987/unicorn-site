@@ -141,6 +141,7 @@ p.pagepar {
     font-weight: 300;
     font-size: 1em;
     color: #65012E;
+    padding: 0;
 }
 
 a {
@@ -789,8 +790,8 @@ div.socialicontext {
 #readmorebtn {
     position: absolute;
     min-height: 35px;
-    right: 10px;
-    left: 10px;
+    right: 0px;
+    left: 0px;
     bottom: 0px;
     border: none;
     font-size: 1.2em;
@@ -941,7 +942,6 @@ div.socialicontext {
 
     p.pagepar {
         text-align: center;
-        font-family: "Figtree", Arial, Helvetica, sans-serif;
     }
 
     .eventdetails {
