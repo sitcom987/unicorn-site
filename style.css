@@ -163,17 +163,29 @@ img {
 /* BG shapes */
 
 div.shape-container-1 {
-    position: relative;
+    position: absolute;
     width: 100%;
     margin: 0;
-    overflow-x: hidden;
+    overflow-x: clip;
     overflow-y: visible;
 }
 
 div.shape-container-2 {
+    position: absolute;
     width: 100vw;
     margin: 0;
-    overflow-x: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
+    height: 100%;
+}
+
+div.shape-container-3 {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+    overflow-x: clip;
     overflow-y: visible;
     height: 10%;
 }
@@ -731,6 +743,7 @@ div.socialicontext {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 2;
 }
 
 .event-img-card {
@@ -743,6 +756,7 @@ div.socialicontext {
     background-position: center;
     text-align: center;
     border-radius: 14px;
+    z-index: 0;
 }
 
 .readmorecontainer {
