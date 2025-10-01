@@ -166,15 +166,16 @@ div.shape-container-1 {
     position: relative;
     width: 100%;
     margin: 0;
-    overflow-x: clip;
+    overflow-x: hidden;
     overflow-y: visible;
 }
 
 div.shape-container-2 {
-    width: 100%;
+    width: 100vw;
     margin: 0;
-    overflow-x: clip;
+    overflow-x: hidden;
     overflow-y: visible;
+    height: 10%;
 }
 
 div.bg-shape {
@@ -184,6 +185,8 @@ div.bg-shape {
     margin: 0;
     padding: 0;
     filter: blur(50px);
+    overflow-x: hidden;
+    z-index: -1;
 }
 
 div.yellow-circle-1 {
