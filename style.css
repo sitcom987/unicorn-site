@@ -737,6 +737,12 @@ div.socialicontext {
     background-position: center;
 }
 
+.paymentmethods {
+    background-image: url("./images/payment-schemes.svg");
+    margin: 10px 0 10px 0;
+    width: auto;
+}
+
 /* Event page */
 
 
@@ -761,7 +767,7 @@ div.socialicontext {
 }
 
 .readmorecontainer {
-    width: 100%;
+    width: auto;
     min-height: 100vh;
     height: auto;
     margin: 0 20px 0 20px;
