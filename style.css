@@ -739,6 +739,9 @@ div.socialicontext {
 
 .paymentmethods {
     background-image: url("./images/payment-schemes.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     margin: 10px 0 10px 0;
     width: auto;
 }
