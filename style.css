@@ -428,39 +428,39 @@ div.nexteventcard {
 }
 
 .nexteventcard > h2 {
-    font-size: 4em;
+    font-size: 4.5em;
     margin: 2px 2px 0 10px;
     text-align: left;
 }
 
 .nexteventcard > h3 {
     font-size: 1.2em;
-    margin: -15px 2px 20px 10px;
+    margin: -15px 2px 30px 10px;
     text-align: left;
 }
 
 .nexteventcard > h5 {
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin: 2px 2px 10px 10px;
     text-align: left;
     text-transform: uppercase;
 }
 
 .nexteventcard > p.firstline {
-    font-size: 1.7em;
+    font-size: 1.5em;
     margin: 20;
     text-align: left;
     font-family: "Figtree", Arial, Helvetica, sans-serif;
     color: #65012E;
-    font-weight: 300;
+    font-weight: 400;
     text-transform: uppercase;
 }
 
 .nexteventcard > p.secondline {
     font-family: "Figtree", Arial, Helvetica, sans-serif;
     color: #65012E;
-    font-weight: 300;
-    font-size: 1.5em;
+    font-weight: 400;
+    font-size: 1.3em;
     text-align: left;
 }
 
@@ -945,6 +945,7 @@ div.socialicontext {
     font-family: "Figtree", Arial, Helvetica, sans-serif;
     font-size: 0.8em;
     color: #65012E;
+    margin-bottom: 4px;
 }
 
 .eventlocation {
@@ -954,6 +955,7 @@ div.socialicontext {
     width: 100%;
     font-family: "Figtree", Arial, Helvetica, sans-serif;
     font-size: 0.8em;
+    margin-bottom: 4px;
 }
 
 .eventdate > p {
