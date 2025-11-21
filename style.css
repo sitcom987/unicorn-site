@@ -916,15 +916,15 @@ div.socialicontext {
 .ticketcontainer {
     width: 100%;
     height: auto;
-    margin: 0 20px 0 20px;
+    margin: 0 20px 0 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .ticketitem {
-    width: 85%;
-    min-width: 350px;
+    width: 95%;
+    min-width: 250px;
     margin: 20px 0 20px 0;
     padding: 0 0 10px 0;
     display: flex;
