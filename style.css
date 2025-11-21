@@ -424,6 +424,8 @@ div.nexteventcard {
     background-color: #FFFFFF;
     background-image: linear-gradient(180deg, transparent, #ffc7e0), url("");
     background-size: cover;
+    max-width: 700px;
+    margin: auto;
     
 }
 
@@ -794,7 +796,8 @@ div.socialicontext {
 
 .paymentmethods {
     margin: 10px 0 10px 0;
-    width: auto;
+    width: 30%;
+    min-width: 180px;
 }
 
 /* Event page */
@@ -908,12 +911,16 @@ div.socialicontext {
 .ticketcontainer {
     width: 100%;
     height: auto;
-    margin: 20px 20px 0 20px;
+    margin: 0 20px 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .ticketitem {
     width: 85%;
-    margin: 10px 0 10px 0;
+    min-width: 400px;
+    margin: 20px 0 20px 0;
     padding: 0 0 10px 0;
     display: flex;
     justify-content: center;
@@ -921,6 +928,7 @@ div.socialicontext {
     flex-wrap: wrap;
     border: 2px solid #FD358F;
     border-radius: 14px;
+    max-width: 700px;
 }
 
 .ticketitem > a {
@@ -937,6 +945,16 @@ div.socialicontext {
     width: 100%;
 }
 
+.eventsubtitle {
+    margin: 0;
+    max-width: 700px;
+    text-align: left;
+}
+
+.eventsubtitle > p {
+    padding: 0;
+}
+
 .eventdate {
     text-align: left;
     display: block;
@@ -945,7 +963,16 @@ div.socialicontext {
     font-family: "Figtree", Arial, Helvetica, sans-serif;
     font-size: 0.8em;
     color: #65012E;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+}
+
+.eventdate > p {
+    font-weight: 400;
+    text-align: left;
+}
+
+.eventdate a {
+    color: #65012E;
 }
 
 .eventlocation {
@@ -955,12 +982,7 @@ div.socialicontext {
     width: 100%;
     font-family: "Figtree", Arial, Helvetica, sans-serif;
     font-size: 0.8em;
-    margin-bottom: 4px;
-}
-
-.eventdate > p {
-    font-weight: 400;
-    text-align: left;
+    margin-bottom: 6px;
 }
 
 .eventlocation > p {
@@ -968,8 +990,28 @@ div.socialicontext {
     text-align: left;
 }
 
+.eventlocation a {
+    color: #65012E;
+}
+
 .pagemoreinfoscontainer {
     margin: 0 20px 0 20px;
+}
+
+.linebreak {
+    width: 100%;
+}
+
+.titlecontainer {
+    margin: 20px 20px 0 20px;
+}
+
+.bg-yellow {
+    background-color: #ffff5c;
+}
+
+.bg-lightpink {
+    background-color: #ffc7e0;
 }
 
 /* Mobile */ 
@@ -1008,13 +1050,18 @@ div.socialicontext {
 
     .eventdetails {
     justify-content: center;
-}
+    }
     .eventdate {
         display: flex;
     }
 
     .eventlocation {
         display: flex;
+    }
+
+    .eventsubtitle {
+        text-align: center;
+        margin: auto;
     }
 
 }
