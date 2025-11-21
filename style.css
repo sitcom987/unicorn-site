@@ -618,6 +618,7 @@ button:hover {
 .buybtns {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 
@@ -678,6 +679,10 @@ div.faq-img-card > h2 {
 
 .membershipz {
     z-index: 1;
+}
+
+.bg-uni3 {
+    background-image: url("https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/unicorn-3-adam-adri.JPG");
 }
 
 .faq-card-container {
@@ -919,7 +924,7 @@ div.socialicontext {
 
 .ticketitem {
     width: 85%;
-    min-width: 400px;
+    min-width: 350px;
     margin: 20px 0 20px 0;
     padding: 0 0 10px 0;
     display: flex;
