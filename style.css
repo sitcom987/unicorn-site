@@ -468,7 +468,9 @@ div.nexteventcard {
 
 
 div.pastbooksbox {
-    /* border: 15px solid #FD358F; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     border-radius: 20px;
     padding: 10px;
     padding: 20px 15px 30px 15px;
@@ -480,7 +482,9 @@ div.pastbookscard {
     background-color: #FFFFFF;
     background-image: linear-gradient(180deg, transparent, #ffc7e0), url("");
     background-size: cover;
-    max-width: 700px;
+    min-width: 250px;
+    width: 95%;
+    max-width: 1000px;
     margin: 10px 0 10px 0;
     
 }
