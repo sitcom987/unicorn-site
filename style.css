@@ -178,6 +178,7 @@ div.shape-container-2 {
     overflow-x: clip;
     overflow-y: visible;
     height: 100%;
+    z-index: -1;
 }
 
 div.shape-container-3 {
