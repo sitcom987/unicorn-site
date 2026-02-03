@@ -1095,6 +1095,14 @@ div.socialicontext {
     background-color: #ffc7e0;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
+.op50 {
+    opacity: 0.5;
+}
+
 /* Mobile */ 
 
 @media screen and (max-width: 800px) {
