@@ -757,6 +757,10 @@ div.faq-img-card > h2 {
     z-index: 1;
 }
 
+.gif {
+    background-image: url("https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/unicorn-event.gif");
+}
+
 .bg-uni3 {
     background-image: url("https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/unicorn-3-adam-adri.JPG");
 }
