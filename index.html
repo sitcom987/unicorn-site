@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+      <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-CF0XF2BL5M"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
@@ -24,431 +24,680 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="format-detection" content="telephone=no" />
-
-    <title>Unicorn Book Club &ndash; Non-fiction könyvklub és mental gym Budapesten</title>
-
-    <meta name="description" content="Önfejlesztő non-fiction könyvklub és rendezvénysorozat. Havi 1 könyv, havi 1 rendezvény, havi 1 koktél. Nincs időd olvasni? Csatlakozz a kihíváshoz!" />
-    <meta property="og:site_name" content="Unicorn Book Club" />
-    <meta property="og:title" content="Unicorn Book Club" />
-    <meta property="og:description" content="non-fiction könyvek, rendezvények, könyvklub, események, webshop" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://unicorbookclub.hu/" />
-    <meta property="og:image" content="https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/unicorn-books.jpg" sizes="any" />
+  <meta charset="UTF-8">
+  
+  <title>Unicorn Book Club &ndash; Non-fiction könyvklub és mental gym Budapesten</title>
+  
+  <meta name="description" content="Önfejlesztő non-fiction könyvklub és rendezvénysorozat. Havi 1 könyv, havi 1 rendezvény, havi 1 koktél. Nincs időd olvasni? Csatlakozz a kihíváshoz!" />
+  <meta property="og:site_name" content="Unicorn Book Club" />
+  <meta property="og:title" content="Unicorn Book Club" />
+  <meta property="og:description" content="non-fiction könyvek, rendezvények, könyvklub, események, webshop" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://unicorbookclub.hu/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/og-konyvklub-unicorn.jpg" sizes="any" />
 
     <link rel="canonical" href="https://unicorbookclub.hu/" />
     <link rel="icon" href="https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/unicorn-favicon.png" />
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Ojuju:wght@200..800&display=swap" rel="stylesheet"> 
-
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script>
+    /* Prevent flash of wrong theme on load */
+    (function () {
+      var t = localStorage.getItem('ubc-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    }());
+  </script>
 </head>
 <body>
-    <section id="intro">
-        <div class="shape-container-1">
-            <div class="yellow-circle-1 bg-shape"></div>
-            <div class="pink-circle-1 bg-shape"></div>
+
+  <!-- Grain texture overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Ambient gradient orbs -->
+  <div class="orb-container" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+
+  <!-- ==================== NAV ==================== -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">unicorn book club<span></span></a>
+
+        <ul class="nav-links">
+          <li><a href="#events">Következő esemény</a></li>
+          <li><a href="#archive">Korábbi események</a></li>
+          <li><a href="#tickets">Jegyek</a></li>
+          <li><a href="#faq">GYIK</a></li>
+          <li><a href="#contact">Kapcsolat</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="#tickets" class="btn btn-primary">Jegyek</a>
         </div>
 
-        <div class="firstview">
-            <div class="logo fade"> 
-                <h1>unicorn<br>book<br>club</h1>
-            </div>
+        <button class="theme-toggle nav-theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+          <span class="theme-icon">🌙</span>
+        </button>
 
-            <div class="introduction">
-                <h2 class="intro-title fade">Önfejlesztő könyvklub</h2>
-                <h3 class="fade">Csatlakozol?</h3>
-            </div>
-        </div>
-        
-        <div class="whatsthis">
-            <a href ="#join"><button class="join-pink">CSATLAKOZOM! <span class="nooverlay">&#129412;</span></button></a>
-            <br><br>
-            <h2 class="fade">– Mi ez az egész? –</h2>
-        </div>
-
-        <div class="parallaxcontainer">
-
-            <section class="parallax">
-                <div class="background">
-                    <div class="faq-img-card faq-book"></div>
-                    <h2>Havi</h2>
-                    <p class="pink-1-md fade">1</p>
-                    <h2>könyv</h2>
-                    <p class="parallaxp">Minden hónapban elolvasunk egy könyvet, amit közösen választunk ki.</p>
-                    <a href ="#join"><button class="join-pink-small">CSATLAKOZOM! <span class="nooverlay">&#129412;</span></button></a>
-                </div>
-            </section>
-
-            <section class="parallax">
-                <div class="background">
-                    <div class="faq-img-card faq-event"></div>
-                    <h2>Havi</h2>
-                    <p class="pink-1-md fade">1</p>
-                    <h2>rendezvény</h2>
-                    <p class="parallaxp">Minden hónapban összegyűlünk, és megvitatjuk az olvasottakat. Pontozzuk a könyvet, és kiválasztjuk, hogy legközelebbre mit fogunk elolvasni.</p>
-                    <a href ="#join"><button class="join-pink-small">CSATLAKOZOM! <span class="nooverlay">&#129412;</span></button></a>
-                </div>
-            </section>
-
-            <section class="parallax">
-                <div class="background">
-                    <div class="faq-img-card faq-membership"></div>
-                    <h2>Havi</h2>
-                    <p class="pink-1-md fade">1</p>
-                    <h2>koktél</h2>
-                    <p class="parallaxp">Minden alkalomra a szakavatott bartenderünk készít egy tematikus koktélt alkoholos és alkoholmentees változatban.</p>
-                    <a href ="#join"><button class="join-pink-small">CSATLAKOZOM! <span class="nooverlay">&#129412;</span></button></a>
-                </div>
-            </section>
-
-        </div>
-
-        <div class="explainercards">
-            <div class="leftcontainer">
-                <div class="leftcard">
-                    <h2>Havi</h2>
-                    <p class="pink-1-md fade">1</p>
-                    <h2>könyv</h2>
-                    <h3>📖</h3>
-                    <p class="card">Minden hónapban elolvasunk egy könyvet, amit közösen választunk ki.</p>
-                    <a href ="#join"><button class="join-pink-small">CSATLAKOZOM! <span class="nooverlay">&#129412;</span></button></a>
-                </div>
-                <div class="leftcard">
-                    <h2>Havi</h2>
-                    <p class="pink-1-md fade">1</p>
-                    <h2>rendezvény</h2>
-                    <h3>💃🏻</h3>
-                    <p class="card">Minden hónapban összegyűlünk, és megvitatjuk az olvasottakat. Pontozzuk a könyvet, és kiválasztjuk, hogy legközelebbre mit fogunk elolvasni.</p>
-                    <a href ="#join"><button class="join-pink-small">CSATLAKOZOM! <span class="nooverlay">&#129412;</span></button></a>
-                </div>
-                <div class="leftcard">
-                    <h2>Havi</h2>
-                    <p class="pink-1-md fade">1</p>
-                    <h2>koktél</h2>
-                    <h3>🍹</h3>
-                    <p class="card">Minden alkalomra a szakavatott bartenderünk készít egy tematikus koktélt alkoholos és alkoholmentees változatban.</p>
-                    <a href ="#join"><button class="join-pink-small">CSATLAKOZOM! <span class="nooverlay">&#129412;</span></button></a>
-                </div>
-                
-            </div>
-
-            <div class="rig htcontainer">
-                <div class="rightsticky">
-                    <div class="cardimg bookz">
-                        <img src="https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/books.png">
-                    </div>
-                    <div class="cardimg eventsz">
-                        <img src="https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/unicorn-kickoff-adam-eszter.jpg">
-                    </div>
-                    <div class="cardimg membershipz">
-                        <img src="https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/party-cocktail.jpg">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="nexteventbox">
-            <h3>Következő eseményünk:</h3>
-            <div class="nexteventcard">
-                <h2>29</a><h2>
-                <h3>Május</h3>
-                <h5>Jövőtervezés és AI</h5>
-                <p class="firstline">What's next is now<p>
-                <p class="secondline">Jövőnk a mesterséges intelligencia tükrében</p>
-                <br>
-                <div>
-                <a href="/2026-05-29.html"><button class="sub-btn pink">Tovább 🦄</button></a>
-                </div>
-                <br>
-            </div>
-        </div>
-        <br>
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@unicornbook.club/video/7534670062599376150" data-video-id="7534670062599376150" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@unicornbook.club" href="https://www.tiktok.com/@unicornbook.club?refer=embed">@unicornbook.club</a> Indul az önfejlesztő könyvklub - elolvasunk havonta 1 könyvet, hónap végén találkozunk és megbeszéljük hogy mit tanultunk, és megkóstoljuk az alkalomhoz készített koktélt. Csatlakozz a kihíváshoz: https:&#47;&#47;forms.gle&#47;ZZAcFsMUPcah83528 <a title="önfejlesztés" target="_blank" href="https://www.tiktok.com/tag/%C3%B6nfejleszt%C3%A9s?refer=embed">#önfejlesztés</a> <a title="könyvklub" target="_blank" href="https://www.tiktok.com/tag/k%C3%B6nyvklub?refer=embed">#könyvklub</a> <a title="budapest" target="_blank" href="https://www.tiktok.com/tag/budapest?refer=embed">#budapest</a> <a title="nonfiction" target="_blank" href="https://www.tiktok.com/tag/nonfiction?refer=embed">#nonfiction</a> <a target="_blank" title="♬ Down The Road - C2C" href="https://www.tiktok.com/music/Down-The-Road-249591681946116096?refer=embed">♬ Down The Road - C2C</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
-        <br>
-    </section>
-    <section id="challenge">
-        <div>
-            <h3 class="challenge">El tudsz olvasni</h3>
-            <p class="pink-1-lg fade">1</p>
-            <h3 class="challenge-2">könyvet <br>egy hónapban?*</h3>
-            <p class="challenge-fine">*ha nem, akkor is várunk! &#127864;</p>
-            <br>
-            <a href ="#join"><button class="join">CSATLAKOZOM! <span class="nooverlay">&#129412;</span></button></a>
-        </div>
-    </section>
-    <section id="faq">
-        <div class="shape-container-2">
-            <div class="yellow-circle-2 bg-shape"></div>
-            <div class="pink-circle-2 bg-shape"></div>
-        </div>
-        <h3 class="details">– Your mental gym –</h3>
-        <p class="fine-overlay">Don't skip mind day</p>
-        <div class="faq-img-container faq-card-container">
-            <div class="faq-img-card faq-book">
-                <h2>1 könyv</h2>
-            </div>
-            <div class="faq-img-card faq-event">
-                <h2>1 rendezvény</h2>
-            </div>
-            <div class="faq-img-card faq-membership">
-                <h2>1 tagság</h2>
-            </div>
-            <p>A Unicorn Book Club, ahol önfejlesztő elmék találkoznak. Minden hónapban megszavazunk egy non-fiction könyvet, amit a következő alkalomra elolvasunk. Összegyűlünk, megvitatjuk, és megkóstoljuk az adott 
-                témához kapcsolódó koktélt.</p>
-            <br>
-        </div>
-        
-        <h3>– Hogyan működik? –</h3>
-        <div class="faq-card-container">
-            <div class="faq-card">
-                <h4>JOIN</h4>
-                <h2 class="faq-title">1. Csatlakozz &#129412;</h2>
-                <p class="faq-body">Ajándékozd meg magad a tagsággal. Válaszd a hozzád illő tagságot, ami illeszkedik az életstílusodhoz és céljaidhoz.</p>
-            </div>
-            <div class="faq-card">
-                <h4>READ</h4>
-                <h2 class="faq-title">2. Olvass &#128214;</h2>
-                <p class="faq-body">Minden hónapban a tagok megszavazzák a következő könyvet. Olvass és csatlakozz a megbeszéléshez. Nem baj, ha nem sikerül befejezni a könyvet.</p>
-            </div>
-            <div class="faq-card">
-                <h4>MEET</h4>
-                <h2 class="faq-title">3. Találkozzunk &#128131;</h2>
-                <p class="faq-body">Meghívunk a havi eseményünkre (személyes vagy digitális), kaphatsz reading buddyt és csatlakozhatsz a zárt közösségi csatornáinkhoz.</p>
-            </div>
-            <div class="faq-card">
-                <h4>REPEAT</h4>
-                <h2 class="faq-title">4. Repeat &#128258;</h2>
-                <p class="faq-body">Új hónap, új könyv, új ötletek, új gondolatok. Nem hagyjuk abba az önfejlesztést. </p>
-            </div>
-            
-        </div>
-        <br>
-        <div class="shape-container-2">
-            <div class="yellow-circle-2 bg-shape"></div>
-            <div class="pink-circle-2 bg-shape"></div>
-        </div>
-        <h3 id="join" class="details">– Mennyibe kerül? – </h3>
-        <br>
-
-            <div class="ticketcontainer">
-
-            <div class="ticketitem"><p class="membership-btn-txt">Első alkalom / Diák:</p><h5>2400 Ft</h5>
-            <div class="linebreak"></div>
-            <div class="buybtns"><a href="https://freeszfe.jegyx1.hu/esemeny/12498/unicorn-book-club-%E2%80%93-jovo-az-ai-tukreben/2026-05-29-19-00" target="_blank"><button class="buy-btn">Kártya</button></a></div>
-            <div class="linebreak"></div>
-            <div class="paymentmethods"><img src="https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/payment-schemes.svg"></div>
-        </div>
-        <div class="linebreak"></div>
-
-        <div class="ticketitem"><p class="membership-btn-txt">Belépő:</p><h5>3000 Ft</h5>
-            <div class="linebreak"></div>
-            <div class="buybtns"><a href="https://freeszfe.jegyx1.hu/esemeny/12498/unicorn-book-club-%E2%80%93-jovo-az-ai-tukreben/2026-05-29-19-00" target="_blank"><button class="buy-btn">Kártya</button></a></div>
-            <div class="linebreak"></div>
-            <div class="paymentmethods"><img src="https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/payment-schemes.svg"></div>
-        </div>
-        <div class="linebreak"></div>
-
-        <div class="ticketitem bg-lightpink"><p class="membership-btn-txt">Belépő + könyv:</p><h5>6990 Ft</h5><div class="linebreak"></div>
-            <p class="fineprint">Belépés az május 29-i alkalmunkra<br>+<br>Elpostázzuk neked a Felforgatókönyvet<br>(A könyv bolti ára: 4500 Ft)</p><br>
-            <div class="linebreak"></div><br>
-            <div class="buybtns"><a href="https://buy.stripe.com/cNi4gzdIY3AE3j16F2ew80f" target="_blank"><button class="buy-btn">Kártya</button></a></div>
-            <div class="linebreak"></div>
-            <div class="paymentmethods"><img src="https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/payment-schemes.svg"></div>
-        </div>
-        <div class="linebreak"></div>
-
-        <div class="ticketitem bg-yellow"><p class="membership-btn-txt">Támogatói jegy + könyv</p><h5>9990 Ft</h5><div class="linebreak"></div>
-            <p class="fineprint">Belépés az május 29-i alkalmunkra<br>+<br>Elpostázzuk neked a Felforgatókönyvet<br>(A könyv bolti ára: 4500 Ft)</p><br>
-            <div class="linebreak"></div><br>
-            <div class="buybtns"><a href="https://buy.stripe.com/3cI8wP6gwgnq1aTe7uew80e" target="_blank"><button class="buy-btn">Kártya</button></a></div>
-            <div class="linebreak"></div>
-            <div class="paymentmethods"><img src="https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/payment-schemes.svg"></div>
-        </div>
-        <div class="linebreak"></div>
-
-        <p class="fineprint">Az eseményeken fotó, videó és hangfelvétel készül. Ha nem szeretnél rajta lenni a felvételeken, kérjük, jelezd a szervezők felé.</p>
-
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
-    <br>
-        <div>
-            <p>A tagdíjjal részt vehetsz a rendezvényeken, hozzáférést kapsz a <strong>Unicorn Book Club</strong> zárt csatornáihoz, email listájához, részt vehetsz a következő könyv kiválasztásában. Az eseményekről felvétel készül, amit <a href="https://www.youtube.com/@unicornbookclubhq" target="_blank">Youtube</a> és <a href="https://open.spotify.com/show/50UPrwszDAi4PKiS1sl6No?si=a8ecd6050cd141ae" target="_blank">Spotify</a> csatornánkon teszünk közzé.<br><br>
-                    Ha szeretnéd, hogy a minden hónapban eljuttassuk neked az aktuális könyvet egy kis meglepetéssel, akkor válaszd a Tagdíj + könyv opciónkat.</p>
-            <br>
-            <div class="pastbooksbox">
-            <h3>Miket olvastunk eddig?</h3>
+  </nav>
 
-             <div class="pastbookscard">
-                    <h2>#9</a><h2>
-                    <h5>Téma: Rendszerváltás</h5>
-                    <p class="firstline">Lányi András: Felforgatókönyv 💡<p>
-                    <p class="secondline">A rendszerváltozás forgatókönyve</p>
-                    <p class="firstline">––––––––</p>
-                    <p class="thirdline">A kiadványban közel 50 szerző írta össze ötleteit, javaslatait, amik megoldást jelentenének az ország legégetőbb problémáira. Többek között szó van benne a jogállamról, a gazdaságról, a környezetvédelemről, az oktatásról, a kultúráról, és különböző régiók helyzetéről.
-                        <br><br>A kötet célja, hogy a politika pedig visszanyerje eredeti értelmét: nem szekértáborok nemtelen viaskodása, hanem a meggyőződések, értelmes érvek vitája legyen.
-                    <br><br>
-                    </p>
-                    <div class="pastbooksscore">
-                    <h5>Pontszám:</h5>
-                    <h3>7.67</h3>
-                    </div>
-                    <br>
-                </div>
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true">
+    <a href="#events"   class="mobile-link">Következő esemény</a>
+    <a href="#archive"  class="mobile-link">Korábbi események</a>
+    <a href="#tickets"  class="mobile-link">Jegyek</a>
+    <a href="#faq"      class="mobile-link">GYIK</a>
+    <a href="#contact"  class="mobile-link">Kapcsolat</a>
+    <a href="event.html" class="btn btn-primary" style="margin-top: 12px;">Get tickets</a>
+    <div class="mobile-theme-row">
+      <span class="mobile-theme-label">Sötét mód</span>
+      <button class="theme-toggle" aria-label="Switch to dark mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </div>
 
-            <div class="pastbookscard">
-                    <h2>#8</a><h2>
-                    <h5>Téma: Életvezetés</h5>
-                    <p class="firstline">James Clear: Atomi szokások 🎯<p>
-                    <p class="secondline">Apró változások, kiemelkedő eredmények</p>
-                    <p class="firstline">––––––––</p>
-                    <p class="thirdline">Az Atomi szokások azt mutatja meg, hogyan vezetnek apró, mindennapi változtatások hosszú távon kiemelkedő eredményekhez. 
-                    James Clear szerint nem óriási áttörésekre, hanem rengeteg kicsi, 1%-os javulásra van szükség, amelyek összeadódva teljesen átalakítják az életminőségünket. 
-                    <br><br>
-                    </p>
-                    <div class="pastbooksscore">
-                    <h5>Pontszám:</h5>
-                    <h3>7.67</h3>
-                    </div>
-                    <br>
-                </div>
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="home">
+    <!-- Floating background tags -->
+    <div class="hero-float-tags" aria-hidden="true">
+      <span class="hero-float-tag">#MentalGym</span>
+      <span class="hero-float-tag">#ReadingIsSexy</span>
+      <span class="hero-float-tag">#BudapestiProgramok</span>
+      <span class="hero-float-tag">#BigBrainEnergy</span>
+    </div>
 
-            <div class="pastbookscard">
-                    <h2>#7</a><h2>
-                    <h5>Téma: Személyes pénzügyek</h5>
-                    <p class="firstline">Mérő László: A pénz kettős természete 💸<p>
-                    <p class="secondline">A pénz biológiája és pszichológiája</p>
-                    <p class="firstline">––––––––</p>
-                    <p class="thirdline">A könyv izgalmasan vizsgálja, hogyan működik a pénz nemcsak közgazdasági, hanem pszichológiai értelemben is. Mérő arra keresi a választ, miért viselkedünk néha irracionálisan a pénzzel kapcsolatban, és hogyan alakítják a döntéseinket azok az érzelmek, hiedelmek és társadalmi szabályok, amelyek a pénz köré épültek.
-                    <br><br>
-                    </p>
-                    <div class="pastbooksscore">
-                    <h5>Pontszám:</h5>
-                    <h3>8.46</h3>
-                    </div>
-                    <br>
-                </div>
+    <div class="container">
+      <div class="hero-layout">
+        <div class="hero-text">
+          <div class="hero-badge fade-in">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Budapest
+          </div>
 
-             <div class="pastbookscard">
-                    <h2>#6</a><h2>
-                    <h5>Téma: Mesterséges intelligencia</h5>
-                    <p class="firstline">Yuval Noah Harari: Nexus 🤖<p>
-                    <p class="secondline">Az információs hálózatok rövid története a kőkorszaktól az mesterséges intelligenciáig</p>
-                    <p class="firstline">––––––––</p>
-                    <p class="thirdline">A könyv azt vizsgálja, hogyan alakította az emberi történelmet az információs hálózatok (nyelv, írás, pénz, vallás, bürokrácia), és miért jelent minőségi fordulópontot az AI megjelenése.
-                    <br><br>
-                    Harari szerint a legnagyobb veszély az, hogy hatékony, de kontrollálatlan információs rendszereket építünk, amelyek alááshatják a demokráciát, az igazság fogalmát és az emberi autonómiát. A könyv központi kérdése: képesek leszünk-e erkölcsi, politikai és intézményi bölcsességgel irányítani az AI-vezérelt hálózatokat, mielőtt azok irányítanának minket.</p>
-                    <div class="pastbooksscore">
-                    <h5>Pontszám:</h5>
-                    <h3>6.00</h3>
-                    </div>
-                    <br>
-                </div>
+          <h1 class="hero-title">
+            <span class="hero-title-line1 fade-in delay-1">Unicorn</span>
+            <span class="hero-title-line2 fade-in delay-2">Book Club</span>
+          </h1>
 
-             <div class="pastbookscard">
-                    <h2>#5</a><h2>
-                    <h5>Téma: Idő management</h5>
-                    <p class="firstline">Oliver Burkeman: Az élet rövid ⌛<p>
-                    <p class="secondline">Útmutató hala(n)dóknak a stresszmentes időbeosztáshoz</p>
-                    <p class="firstline">––––––––</p>
-                    <p class="thirdline">A könyv abból a felismerésből indul ki, hogy egy átlagos élet kb. 4000 hétig tart. Az időnkkel való küszködés alapja nem a rossz szervezés, hanem az, hogy véges az életünk. Burkeman leválasztja az időmenedzsmentet a maximalizmusról és a „mindent el kell érnem” kényszeréről, és arra bátorít, hogy elfogadjuk korlátainkat, tudatosan válasszuk meg, mire fordítjuk figyelmünket, és tanuljunk nemet mondani.</p>
-                    <div class="pastbooksscore">
-                    <h5>Pontszám:</h5>
-                    <h3>7.71</h3>
-                    </div>
-                    <br>
-                </div>
+          <p class="hero-tagline fade-in delay-2">mental gym</p>
 
-             <div class="pastbookscard">
-                    <h2>#4</a><h2>
-                    <h5>Téma: Párválasztás</h5>
-                    <p class="firstline">Dr. Cowan Connel és Dr. Melvyn Kinder: Okos nők, ostoba döntések 👩‍❤️‍👨<p>
-                    <p class="secondline">A jó partnert megtalálni és elkerülni a rosszat</p>
-                    <p class="firstline">––––––––</p>
-                    <p class="thirdline">A könyv azt vizsgálja, hogy értelmes, eredményes, vonzó nőknél miért fordulhat elő gyakran, hogy mégsem találják meg a tartós, kielégítő párkapcsolatot. A szerzők pszichológusokként azt feltételezik, hogy nem pusztán véletlenszerű „rossz választások” állnak a háttérben, hanem mélyebb minták, attitűdök, elvárások és korábbi élet-élmények befolyásolják a párválasztást.</p>
-                    <div class="pastbooksscore">
-                    <h5>Pontszám:</h5>
-                    <h3>6.25</h3>
-                    </div>
-                    <br>
-                </div>
+          <p class="hero-description fade-in delay-3">
+            Ha szeretnéd érteni a világot és magadat. Havonta egyszer szétszedjük és összerakjuk a kultúránkat. 
+            <br><strong>📖 havi 1 könyv 💃🏻 havi 1 rendezvény 🍹 havi 1 koktél</strong>
+          </p>
 
-             <div class="pastbookscard">
-                    <h2>#3</a><h2>
-                    <h5>Téma: Érzelmi intelligencia</h5>
-                    <p class="firstline">Daniel Goleman: Érzelmi intelligencia 🎓<p>
-                    <p class="secondline">Miért fontosabb, mint az IQ?</p>
-                    <p class="firstline">––––––––</p>
-                    <p class="thirdline">A siker és a boldogság kulcsa nem csupán az értelmi képességekben (IQ) rejlik, hanem legalább annyira az érzelmi intelligenciában (EQ). Ez az a készség, amely meghatározza, hogyan tudjuk értelmezni és kezelni a saját érzéseinket, mennyire vagyunk képesek empatikusan viszonyulni másokhoz, és hogyan tudjuk fenntartani a motivációnkat.</p>
-                    <div class="pastbooksscore">
-                    <h5>Pontszám:</h5>
-                    <h3>6.4</h3>
-                    </div>
-                    <br>
-                </div>
-
-                <div class="pastbookscard">
-                    <h2>#1</a><h2>
-                    <h5>Téma: Kommunikáció, félreértések</h5>
-                    <p class="firstline">Malcolm Gradwell: Ismerős ismeretlenek 🗣<p>
-                    <p class="secondline">Mit érdemes tudni azokról, akikről semmit sem tudunk?</p>
-                    <p class="firstline">––––––––</p>
-                    <p class="thirdline">Malcolm Gladwell ebben a művében azt vizsgálja, miért értjük félre olyan gyakran az idegeneket, és milyen súlyos következményekkel járhat ez.
-                        <br><br>Alapgondolata, hogy az emberek „alapértelmezetten” hajlamosak hinni másoknak, ez a bizalom azonban sebezhetővé tesz bennünket csalókkal vagy manipulatív személyekkel szemben. Gladwell rámutat arra is, hogy hajlamosak vagyunk túlzottan a látszatra hagyatkozni: arckifejezésekből, testbeszédből próbálunk következtetni, pedig ezek kulturálisan és egyénileg is eltérőek. </p>
-                    <div class="pastbooksscore">
-                    <h5>Pontszám:</h5>
-                    <h3>5.54</h3>
-                    </div>
-                    <br>
-                </div>
-
-            </div>
-            
-            <h3>Hol vannak az események?</h3>
-            <p>A havi találkozókat Budapesten rendezzük, a helyszín rendszerint meglepetés és az aktuális esemény előtt tájékoztatunk róla. Különleges helyszíneket keresünk: korábbi alkalmaink voltak belvárosi rooftopon, történelmi rendezvényteremben, színházteremben, jóga stúdióban, exkluzív rendezvényhelyszínen, coworking irodában és loft barban.</p>
-            <br>
-            <h3>Kik a tagok?</h3>
-            <p>Egyetemisták, fiatal felnőttek, fejlődni vágyók, kíváncsiak, világra nyitottak, start-upperek, digitális detoxikálók, rendszeres olvasók, soha nem olvasók, olyanok, akik szeretnének néha olvasni és olyanok, akik szeretnének ilyen emberek társaságában tölteni egy-egy estét.</p>
-            <br>
-            <h3>További kérdésed van?</h3>
-            <p><a href="mailto:unicornbookclubhq@gmail.com">unicornbookclubhq@gmail.com</a></p>
-            <br>
-            <div class="socialcontainer">
-                <div class="socialicon">
-                    <a href="https://discord.gg/TGDEKbSYT7" target="_blank"><img src="https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/discord-logo.png" alt="discord logo"></a>
-                </div>
-                <div class="socialicon">
-                    <a href="https://www.instagram.com/unicornbook.club/" target="_blank"><img src="https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/instagram-logo.png" alt="instagram logo"></a>
-                </div>
-                <div class="socialicon">
-                    <a href="https://www.tiktok.com/@unicornbook.club/" target="_blank"><img src="https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/tiktok-logo.png" alt="tiktok logo"></a>
-                </div>
-            </div>
-            <div class="socialcontainer">
-                <div class="socialicon">
-                    <a href="https://www.youtube.com/@unicornbookclubhq" target="_blank"><img src="https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/youtube-logo.png" alt="youtube logo">yt</a>
-                </div>
-                <div class="socialicon">
-                    <a href="https://www.facebook.com/unicornbookclub" target="_blank"><img src="https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/facebook-sq-logo.png" alt="facebook logo">page</a>
-                </div>
-                <div class="socialicon">
-                    <a href="https://www.facebook.com/groups/unicornbookclub/" target="_blank"><img src="https://raw.githubusercontent.com/sitcom987/unicorn-site/refs/heads/main/images/facebook-round-logo.png" alt="facebook group logo">group</a>
-                </div>
-            </div>
-            <br><br>
+          <div class="hero-cta fade-in delay-3">
+            <a href="#events"  class="btn btn-primary">Következő eseményünk →</a>
+            <a href="#archive" class="btn btn-secondary">Korábbi eseményeink</a>
+          </div>
         </div>
-            
-    </section>
-    <section id="footnotes">
-        <p class="fineprint">Unicorn Book Club &copy; 2026</p>
-        <p class="fineprint"><a href="https://drive.google.com/file/d/1TfiXxspkw2NenUjFaOICq8roDLTPDU0N/view?usp=sharing" target="_blank">Adatvédelmi nyilatkozat</a>
-        <p class="fineprint"><a href="https://www.unicornbookclub.hu/">Cookie beállítások</a></p>
-        <br>
-    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/split-type"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js"></script>
-    <script src="js.js"></script>
-    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+        <div class="hero-media fade-in delay-2">
+          <div class="hero-gif-wrap">
+            <img src="images/unicorn-book-club-video.gif"
+                 alt="Unicorn Book Club — one evening in motion"
+                 class="hero-gif">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>Csatlakozz</span>
+    </div>
+  </section>
+
+  <!-- ==================== NEXT EVENT ==================== -->
+  <section id="events" style="padding: 80px 0;">
+    <div class="container">
+      <p class="section-label fade-in">Következő alkalmunk</p>
+
+      <div class="next-event-card glass glass-hover fade-in delay-1">
+        <div class="event-meta">
+          <span class="event-tag event-tag-date">📅 Sat, May 29 · 2026</span>
+          <span class="event-tag event-tag-time">⏰ 19:00 – 23:30</span>
+          <span class="event-tag event-tag-location">📍 FreeSZFE FREEDOM</span>
+        </div>
+
+        <h2 class="next-event-title">
+          <span class="gradient-text">Jövőnk az </span>
+          <span>AI tükrében</span>
+        </h2>
+
+        <p class="next-event-desc">
+          Optimizmus, nyitottság, kíváncsiság, kísérletezés, empátia és az egyéniség –  ez a furutre-ready szemléletmód a Google egyik topmanagere szerint.
+        </p>
+
+        <div class="next-event-footer">
+          <a href="event.html" class="btn btn-primary">További részletek és jegyek</a>
+          <div class="book-pill">
+            <span aria-hidden="true">📖</span>
+            <div class="book-pill-inner">
+              <span class="book-pill-label">A hónap könyve</span>
+              <span class="book-pill-title">What's next is now – Tervezd a jelent, formáld a jövőt</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ARCHIVE ==================== -->
+  <section id="archive">
+    <div class="container">
+      <p class="section-label fade-in">Az archívum</p>
+      <h2 class="section-heading fade-in">Korábbi <span class="gradient-text">témáink.</span></h2>
+
+      <div class="archive-grid">
+
+        <article class="archive-card glass glass-hover fade-in">
+          <div class="archive-emoji">💡</div>
+          <div class="archive-edition">#9 · Ápr 2026 · Rendszerváltás</div>
+          <h3 class="archive-book-title">Felforgatókönyv</h3>
+          <p class="archive-author">Lányi András</p>
+          <p class="archive-takeaway">
+            Közel 50 szerző írta össze javaslatait, amik megoldást jelentenének az ország legégetőbb problémáira. Jogállam, gazdaság, környezetvédelem, oktatás, kultúra és különböző régiók helyzete.
+            <br><br>
+            <strong>Pontszám:</strong>
+          </p>
+          <span class="archive-vibe" style="background:rgba(255,42,109,0.1);color:var(--pink);border:1px solid rgba(255,42,109,0.2);">7.67</span>
+        </article>
+
+        <article class="archive-card glass glass-hover fade-in delay-1">
+          <div class="archive-emoji">🎯</div>
+          <div class="archive-edition">#8 · Márc 2026 · Életvezetés</div>
+          <h3 class="archive-book-title">Atomi szokások</h3>
+          <p class="archive-author">James Clear</p>
+          <p class="archive-takeaway">
+            Az Atomi szokások azt mutatja meg, hogyan vezetnek apró, mindennapi változtatások hosszú távon kiemelkedő eredményekhez. James Clear szerint nem óriási áttörésekre, hanem rengeteg kicsi, 1%-os javulásra van szükség, amelyek összeadódva teljesen átalakítják az életminőségünket.
+            <br><br>
+            <strong>Pontszám:</strong>
+          </p>
+          <span class="archive-vibe" style="background:rgba(191,0,255,0.1);color:var(--purple);border:1px solid rgba(191,0,255,0.2);">7.67</span>
+        </article>
+
+        <article class="archive-card glass glass-hover fade-in delay-2">
+          <div class="archive-emoji">💸</div>
+          <div class="archive-edition">#7 · Feb 2026 · Személyes pénzügyek</div>
+          <h3 class="archive-book-title">A pénz kettős természete</h3>
+          <p class="archive-author">Mérő László</p>
+          <p class="archive-takeaway">
+            Mérő arra keresi a választ, miért viselkedünk néha irracionálisan a pénzzel kapcsolatban, és hogyan alakítják a döntéseinket azok az érzelmek, hiedelmek és társadalmi szabályok, amelyek a pénz köré épültek.
+            <br><br>
+            <strong>Pontszám:</strong>
+          </p>
+          <span class="archive-vibe" style="background:rgba(0,200,255,0.1);color:var(--cyan);border:1px solid rgba(0,200,255,0.2);">8.46</span>
+        </article>
+
+        <article class="archive-card glass glass-hover fade-in delay-1">
+          <div class="archive-emoji">🤖</div>
+          <div class="archive-edition">#6 · Jan 2025 · Mesterséges Intelligencia</div>
+          <h3 class="archive-book-title">Nexus</h3>
+          <p class="archive-author">Yuval Noah Harari</p>
+          <p class="archive-takeaway">
+            A könyv azt vizsgálja, hogyan alakították az emberi történelmet az információs hálózatok (nyelv, írás, pénz, vallás, bürokrácia), és miért jelent minőségi fordulópontot az AI megjelenése.
+            <br><br>
+            <strong>Pontszám:</strong>
+          </p>
+          <span class="archive-vibe" style="background:rgba(195,255,0,0.1);color:var(--lime-dark);border:1px solid rgba(195,255,0,0.2);">6.00</span>
+        </article>
+
+        <article class="archive-card glass glass-hover fade-in delay-2">
+          <div class="archive-emoji">⌛</div>
+          <div class="archive-edition">#5 · Dec 2025 · Idő management</div>
+          <h3 class="archive-book-title">Az élet rövid</h3>
+          <p class="archive-author">Oliver Burkeman</p>
+          <p class="archive-takeaway">
+            A könyv abból a felismerésből indul ki, hogy egy átlagos élet kb. 4000 hétig tart. Maximalizmus helyett arra bátorít, hogy elfogadjuk végességünket, és tudatosan válasszuk meg, mire fordítjuk időnket.
+            <br><br>
+            <strong>Pontszám:</strong>
+          </p>
+          <span class="archive-vibe" style="background:rgba(255,42,109,0.1);color:var(--pink);border:1px solid rgba(255,42,109,0.2);">7.71</span>
+        </article>
+
+        <article class="archive-card glass glass-hover fade-in delay-3">
+          <div class="archive-emoji">👩‍❤️‍👨</div>
+          <div class="archive-edition">#4 · Nov 2025 · Párkapcsolatok</div>
+          <h3 class="archive-book-title">Okos nők, ostoba döntések</h3>
+          <p class="archive-author">Dr. Cowan Connel és Dr. Melvyn Kinder</p>
+          <p class="archive-takeaway">
+            Értelmes, vonzó nők miért nem találják meg a kielégítő párkapcsolatot? A szerzők pszichológusként azt feltételezik, hogy mélyebb minták, attitűdök, elvárások befolyásolják a párválasztást.
+            <br><br>
+            <strong>Pontszám:</strong>
+          </p>
+          <span class="archive-vibe" style="background:rgba(191,0,255,0.1);color:var(--purple);border:1px solid rgba(191,0,255,0.2);">6.25</span>
+        </article>
+
+        <article class="archive-card glass glass-hover fade-in delay-3">
+          <div class="archive-emoji">🎓</div>
+          <div class="archive-edition">#3 · Okt 2025 · Érzelmi intelligencia</div>
+          <h3 class="archive-book-title">Érzelmi intelligencia</h3>
+          <p class="archive-author">Daniel Goleman</p>
+          <p class="archive-takeaway">
+            A siker és a boldogság kulcsa nem csupán az IQ-ban, hanem legalább annyira az érzelmi intelligenciában (EQ) is. Az EQ határozza meg, hogyan tudjuk értelmezni és kezelni a saját érzéseinket és mennyire vagyunk képesek empatikusan viszonyulni másokhoz.
+            <br><br>
+            <strong>Pontszám:</strong>
+          </p>
+          <span class="archive-vibe" style="background:rgba(0,200,255,0.1);color:var(--cyan);border:1px solid rgba(0,200,255,0.2);">6.4</span>
+        </article>
+
+        <article class="archive-card glass glass-hover fade-in delay-3">
+          <div class="archive-emoji">🗣</div>
+          <div class="archive-edition">#2 · Szep 2025 · Kommunikáció, félreértések</div>
+          <h3 class="archive-book-title">Ismerős ismeretlenek</h3>
+          <p class="archive-author">Malcolm Gradwell</p>
+          <p class="archive-takeaway">
+            Miért értjük félre olyan gyakran egymást, és milyen súlyos következményekkel járhat ez?
+            Gladwell történeteken keresztül mutatja be, hogy az emberek „alapértelmezetten” hajlamosak hinni másoknak, és ez a bizalom azonban sebezhetővé tesz bennünket csalókkal szemben.
+            <br><br>
+            <strong>Pontszám:</strong>
+          </p>
+          <span class="archive-vibe" style="background:rgba(195,255,0,0.1);color:var(--lime-dark);border:1px solid rgba(195,255,0,0.2);">5.54</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MOMENTS / PHOTO STRIP ==================== -->
+  <section class="moments-section">
+    <div class="container">
+      <p class="section-label fade-in">In real life</p>
+    </div>
+    <div class="photo-strip">
+      <img src="images/unicorn-1-rooftop-adam-eszter.jpg"   alt="Unicorn Book Club rooftop edition"   class="strip-photo" loading="lazy">
+      <img src="images/unicorn-3-music-hall.jpg"            alt="Book Club at the music hall"          class="strip-photo" loading="lazy">
+      <img src="images/two-girls-partying-with-cocktail.jpg" alt="Evening at the Book Club"            class="strip-photo" loading="lazy">
+      <img src="images/unicorn-6-theatre.jpg"               alt="Theatre edition"                      class="strip-photo" loading="lazy">
+      <img src="images/unicorn-8-abigel-hall.JPG"           alt="Full house"                           class="strip-photo" loading="lazy">
+      <img src="images/unicorn-9-lanyi-andras.jpg"          alt="Speaker at the Book Club"             class="strip-photo" loading="lazy">
+      <img src="images/unicorn-7-mero-laszlo-adam.jpg"      alt="Unicorn Book Club community"         class="strip-photo" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ==================== TICKETS ==================== -->
+  <section id="tickets">
+    <div class="container">
+      <p class="section-label fade-in">Csatlakozz</p>
+      <h2 class="section-heading fade-in">Pick your <span class="gradient-text-warm">vibe.</span></h2>
+      <p class="tickets-intro fade-in">
+        Csatlakozz akkor is, ha nem olvastad a könyvet. Az eseményeken fotók és videók készülnek.
+      </p>
+
+      <div class="tickets-grid">
+
+        <div class="ticket-card glass glass-hover fade-in">
+          <div class="ticket-type">Kedvezményes belépő</div>
+          <div class="ticket-name">Első alkalom/Diák</div>
+          <div class="ticket-price">2400<sup>Ft</sup></div>
+          <ul class="ticket-features">
+            <li><span class="tick">✓</span> Belépés az eseményre</li>
+            <li><span class="tick">✓</span> Csatlakozz a Messenger csoportunkhoz</li>
+            <li><span class="tick">✓</span> Vegyél részt a beszélgetésekben</li>
+            <li><span class="tick">✓</span> Menj haza tájékozottan a hónap témájáról</li>
+          </ul>
+          <a href="https://freeszfe.jegyx1.hu/esemeny/12498/unicorn-book-club-%E2%80%93-jovo-az-ai-tukreben/2026-05-29-19-00" class="btn btn-secondary" target="_blank">Csatlakozom! 🦄</a>
+        </div>
+
+        <div class="ticket-card glass glass-hover featured fade-in delay-1">
+          <span class="popular-badge">A legnépszerűbb</span>
+          <div class="ticket-type">Unicorn Book Club</div>
+          <div class="ticket-name">Belépő</div>
+          <div class="ticket-price">3000<sup>Ft</sup></div>
+          <ul class="ticket-features">
+            <li><span class="tick">✓</span> Belépés az eseményre</li>
+            <li><span class="tick">✓</span> Csatlakozz a Messenger csoportunkhoz</li>
+            <li><span class="tick">✓</span> Vegyél részt a beszélgetésekben</li>
+            <li><span class="tick">✓</span> Menj haza tájékozottan a hónap témájáról</li>
+          </ul>
+          <a href="https://freeszfe.jegyx1.hu/esemeny/12498/unicorn-book-club-%E2%80%93-jovo-az-ai-tukreben/2026-05-29-19-00" class="btn btn-primary" target="_blank">Csatlakozom! 🦄</a>
+        </div>
+
+        <div class="ticket-card glass glass-hover fade-in delay-2">
+          <div class="ticket-type">Olvasónak</div>
+          <div class="ticket-name">Belépő + könyv</div>
+          <div class="ticket-price">6990<sup>Ft</sup></div>
+          <ul class="ticket-features">
+            <li><span class="tick">✓</span> Elpostázzuk neked a hónap könyvét</li>
+            <li><span class="tick">✓</span> Belépés az eseményre</li>
+            <li><span class="tick">✓</span> A könyv mellett egy kis emléket is kapsz az előző eseményről</li>
+            <li><span class="tick">✓</span> Menj haza tájékozottan a hónap témájáról</li>
+          </ul>
+          <a href="https://buy.stripe.com/cNi4gzdIY3AE3j16F2ew80f" class="btn btn-outline" target="_blank">Csatlakozom! 🦄</a>
+        </div>
+
+        <div class="ticket-card glass glass-hover featured fade-in delay-3">
+          <span class="popular-badge">Elkötelezetteknek</span>
+          <div class="ticket-type">Unicorn Book Club</div>
+          <div class="ticket-name">Támogatói jegy</div>
+          <div class="ticket-price">9990<sup>Ft</sup></div>
+          <ul class="ticket-features">
+            <li><span class="tick">✓</span> Elpostázzuk neked a hónap könyvét</li>
+            <li><span class="tick">✓</span> A könyv mellett egy kis emléket is kapsz az előző eseményről</li>
+            <li><span class="tick">✓</span> Vegyél részt a beszélgetésekben</li>
+            <li><span class="tick">✓</span> Menj haza tájékozottan a hónap témájáról</li>
+          </ul>
+          <a href="https://buy.stripe.com/3cI8wP6gwgnq1aTe7uew80e" class="btn btn-primary" target="_blank">Csatlakozom! 🦄</a>
+        </div>
+
+         <div class="ticket-card glass glass-hover fade-in delay-4">
+          <div class="ticket-type">MVP-knek</div>
+          <div class="ticket-name">3 alkalmas belépő</div>
+          <div class="ticket-price">6990<sup>Ft</sup></div>
+          <ul class="ticket-features">
+            <li><span class="tick">✓</span> Ha komolyan veszed az önfejlesztést</li>
+            <li><span class="tick">✓</span> Belépés a következő 3 eseményünkre</li>
+            <li><span class="tick">✓</span> Tájékozódj a legjobb szakemberektől</li>
+            <li><span class="tick">✓</span> Szavazd meg a következő hónap témáját</li>
+          </ul>
+          <a href="https://buy.stripe.com/bJeaEXawM6MQ6vdd3qew805" class="btn btn-outline" target="_blank">Csatlakozom! 🦄</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section id="faq">
+    <div class="container">
+      <p class="section-label fade-in">További kérdésed van?</p>
+      <h2 class="section-heading fade-in">További <span class="gradient-text">infók.</span></h2>
+
+      <div class="faq-grid fade-in delay-1">
+
+        <details>
+          <summary>
+            El kell olvasnom a könyvet?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Nem. Nem fogjuk megkérdezni, nem lesz felelés. A beszélgetés akkor is érthető és hasznos lesz, ha csak a téma érdekel. Az esemény végére lesz egy kialakult képed a témáról.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            Kik a tagok?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Egyetemisták, fiatal felnőttek, kíváncsiak, világra nyitottak, kreatívok, start-upperek, digitális detoxikálók, rendszeres olvasók, soha nem olvasók, olyanok, akik szeretnének néha olvasni és olyanok, akik szeretnének ilyen emberek társaságában tölteni egy-egy estét. Olyanok, akik szeretnek belemerülni a beszélgetésbe, és akik maradnak zárásig.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            Ez networking esemény?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Nem, nincs LinkedIn, nincs névjegykártyacsere, se névtábla. Képzeld el úgy, mint egy podcast felvételt, ahol kérdezhetsz is. Kultúrkávézóvá alakítjuk a teret, ahol vagyunk.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            Hogy zajlik egy esemény?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Beszélgetünk a témánkról a vendégünkkel → kisebb csoportokban is megvitatjuk a hallottakat → adunk egy pontszámot a könyvre és kiválasztjuk a következő havi olvasmányunkat → koktél, bárpult, háttérzene, kötetlen beszélgetések. Néhány kellemes óra, ahonnan úgy mész haza, hogy valamivel több lettél.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            Egyedül is jöhetek?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Persze! Várunk ha egyedül jössz, hamarosan lesz kivel és lesz miről beszélgetned. Nálunk bárkihez szólhatsz, a közösség lényege, hogy megismerjük egymást.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            Milyen gyakran vannak az események?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Havonta egyszer találkozunk. A formátum: havi 1 könyv, havi 1 esemény, havi 1 koktél.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- ==================== SOCIAL FOLLOW ==================== -->
+  <section class="social-follow-section">
+    <div class="container">
+      <p class="section-label fade-in">Kövess minket</p>
+      <h2 class="section-heading fade-in">Ne <span class="gradient-text">maradj le</span></h2>
+      <p class="fade-in delay-1" style="color:var(--text-muted);max-width:400px;margin-bottom:0;">
+        Csatlakozz hozzánk a social felületeinket is
+      </p>
+
+      <div class="social-follow-grid">
+
+        <a href="https://www.facebook.com/unicornbookclub" class="social-follow-card glass fb fade-in">
+          <div class="social-follow-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+          <div class="social-follow-name">Facebook</div>
+          <div class="social-follow-handle">Unicorn Book Club</div>
+        </a>
+
+        <a href="https://www.instagram.com/unicornbook.club/" class="social-follow-card glass ig fade-in delay-1">
+          <div class="social-follow-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+          </div>
+          <div class="social-follow-name">Instagram</div>
+          <div class="social-follow-handle">@unicornbook.club</div>
+        </a>
+
+        <a href="https://www.youtube.com/@unicornbookclubhq" class="social-follow-card glass yt fade-in delay-2">
+          <div class="social-follow-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
+          <div class="social-follow-name">YouTube</div>
+          <div class="social-follow-handle">Korábbi eseményeink</div>
+        </a>
+
+        <a href="https://open.spotify.com/show/50UPrwszDAi4PKiS1sl6No?si=a6aced38772349bb" class="social-follow-card glass sp fade-in delay-3">
+          <div class="social-follow-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+            </svg>
+          </div>
+          <div class="social-follow-name">Spotify</div>
+          <div class="social-follow-handle">Podcastjaink</div>
+        </a>
+
+        <a href="https://www.tiktok.com/@unicornbook.club/" class="social-follow-card glass tt fade-in delay-2">
+          <div class="social-follow-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+            </svg>
+          </div>
+          <div class="social-follow-name">TikTok</div>
+          <div class="social-follow-handle">@unicornbook.club</div>
+        </a>
+
+        <a href="https://discord.gg/TGDEKbSYT7" class="social-follow-card glass dc fade-in delay-3">
+          <div class="social-follow-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+            </svg>
+          </div>
+          <div class="social-follow-name">Discord</div>
+          <div class="social-follow-handle">Unicorn szerver</div>
+        </a>
+
+        <a href="https://www.facebook.com/groups/unicornbookclub/" class="social-follow-card glass fbg fade-in delay-1">
+          <div class="social-follow-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+            </svg>
+          </div>
+          <div class="social-follow-name">Facebook csoport</div>
+          <div class="social-follow-handle">Unicorn Book Club</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-layout">
+
+        <div class="fade-in">
+          <p class="section-label">Kapcsolat</p>
+          <h2 class="contact-heading">Ha <span class="gradient-text">kérdésed van</span></h2>
+          <p class="contact-sub">
+            Kérdések, ötletek, javaslatok, könyvek, vendégek, lehetséges kollaborációk – várjuk az üzenetedet.
+          </p>
+          <div class="social-row">
+            <a href="https://www.instagram.com/unicornbook.club/" class="social-chip">↗ Instagram</a>
+            <a href="mailto:unicornbookclubhq@gmail.com" class="social-chip">✉ Email</a>
+            <a href="#" class="social-chip">📬 Hírlevél (hamarosan)</a>
+          </div>
+        </div>
+
+        <form class="contact-form-wrap glass fade-in delay-1" onsubmit="handleForm(event)">
+          <div class="form-group">
+            <label class="form-label" for="name">Név</label>
+            <input class="form-input" id="name" type="text" placeholder="A neved" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" id="email" type="email" placeholder="you@example.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Üzenet</label>
+            <textarea class="form-textarea" id="message" rows="4" placeholder="Javaslataid, ötleteid"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Küldés →</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">unicorn <span style="color:var(--pink)">book club</span></div>
+        <p class="footer-copy">© 2026 Unicorn Book Club · Budapest</p>
+        <ul class="footer-links">
+          <li><a href="https://drive.google.com/file/d/1TfiXxspkw2NenUjFaOICq8roDLTPDU0N/view?usp=sharing">Adatkezelési tájékoztató</a></li>
+          <li><a href="#">Cookie beállítások</a></li>
+          <li><a href="mailto:unicornbookclubhq@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle — syncs all .theme-toggle buttons (nav + mobile menu)
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('ubc-theme', theme);
+      const isDark = theme === 'dark';
+      document.querySelectorAll('.theme-icon').forEach(el => {
+        el.textContent = isDark ? '☀' : '🌙';
+      });
+      document.querySelectorAll('.theme-toggle').forEach(btn => {
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      });
+    }
+
+    setTheme(localStorage.getItem('ubc-theme') || 'light');
+
+    document.querySelectorAll('.theme-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    });
+
+    // Nav scroll state
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('active', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Intersection observer for fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Trigger hero immediately
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.hero .fade-in').forEach(el => el.classList.add('visible'));
+    });
+
+    // Contact form feedback
+    function handleForm(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = 'Sent ✓';
+      btn.style.background = 'rgba(195,255,0,0.15)';
+      btn.style.color = 'var(--lime)';
+      btn.disabled = true;
+    }
+  </script>
 </body>
+</html>

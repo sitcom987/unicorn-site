@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Soft Life Era — Unicorn Book Club, May 24, 2025. Berlin. Rest Is Resistance by Tricia Hersey.">
+  <title>Soft Life Era · Edition No. 07 — Unicorn Book Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    /* Prevent flash of wrong theme on load */
+    (function () {
+      var t = localStorage.getItem('ubc-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    }());
+  </script>
+
+  <style>
+    /* Event-specific orb override — cyan/lime palette for this edition */
+    .orb-1 { background: radial-gradient(circle, #00C8FF 0%, transparent 68%); opacity: 0.45; }
+    .orb-2 { background: radial-gradient(circle, #C3FF00 0%, transparent 68%); opacity: 0.28; }
+    .orb-3 { background: radial-gradient(circle, #BF00FF 0%, transparent 68%); opacity: 0.38; }
+    .orb-4 { background: radial-gradient(circle, #00C8FF 0%, transparent 68%); opacity: 0.2; }
+
+    /* Immersive hero mesh gradient unique to this event */
+    .event-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 20%, rgba(195,255,0,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 20% 70%, rgba(0,200,255,0.1) 0%, transparent 60%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Countdown bar */
+    .countdown {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .countdown-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-sm);
+      min-width: 72px;
+    }
+
+    .countdown-num {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text);
+    }
+
+    .countdown-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+      margin-top: 4px;
+    }
+
+    .countdown-sep {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--text-subtle);
+      padding: 10px 0;
+      line-height: 1;
+      align-self: flex-start;
+    }
+
+    /* Edition badge strip */
+    .edition-strip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 10px 28px;
+      background: rgba(195,255,0,0.08);
+      border-bottom: 1px solid rgba(195,255,0,0.15);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(195,255,0,0.7);
+      overflow: hidden;
+    }
+
+    .edition-strip span { white-space: nowrap; }
+
+    /* Map / venue card */
+    .venue-card {
+      padding: 28px 32px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .venue-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-sm);
+      background: rgba(0,200,255,0.1);
+      border: 1px solid rgba(0,200,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .venue-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .venue-address {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .venue-link {
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--cyan);
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .venue-link:hover { opacity: 0.7; }
+
+    /* Sticky ticket CTA on mobile */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 90;
+      padding: 16px 20px;
+      background: rgba(6,0,14,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--card-border);
+    }
+
+    @media (max-width: 768px) {
+      .sticky-cta { display: block; }
+      body { padding-bottom: 80px; }
+    }
+
+    /* Texture stripe on event hero */
+    .edition-number {
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      font-size: 14vw;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,0.04);
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Grain -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Orbs (overridden to cyan/lime palette for this event) -->
+  <div class="orb-container" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+
+  <!-- ==================== NAV ==================== -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">UBC<span>.</span></a>
+
+        <ul class="nav-links">
+          <li><a href="index.html#events">Events</a></li>
+          <li><a href="index.html#archive">Archive</a></li>
+          <li><a href="index.html#tickets">Passes</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="#tickets" class="btn btn-lime">Get tickets</a>
+        </div>
+
+        <button class="theme-toggle nav-theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true">
+    <a href="index.html"         class="mobile-link">Home</a>
+    <a href="index.html#archive" class="mobile-link">Archive</a>
+    <a href="#tickets"           class="mobile-link">Tickets</a>
+    <a href="#tickets" class="btn btn-lime" style="margin-top: 12px;">Get tickets</a>
+    <div class="mobile-theme-row">
+      <span class="mobile-theme-label">Theme</span>
+      <button class="theme-toggle" aria-label="Switch to dark mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== EVENT HERO ==================== -->
+  <section class="event-hero" id="home">
+    <!-- Edition marquee strip -->
+    <div class="edition-strip" aria-hidden="true">
+      <span>✦ Edition No. 07</span>
+      <span>✦ May 2025</span>
+      <span>✦ Berlin</span>
+      <span>✦ Rest Is Resistance</span>
+      <span>✦ Edition No. 07</span>
+      <span>✦ May 2025</span>
+      <span>✦ Berlin</span>
+    </div>
+
+    <div class="event-hero-gradient" aria-hidden="true"></div>
+
+    <!-- Large watermark number -->
+    <div class="edition-number" aria-hidden="true">07</div>
+
+    <div class="container">
+      <div class="event-hero-content">
+
+        <div class="event-edition-tag fade-in">
+          ✦ &nbsp;Edition No. 07 · Unicorn Book Club
+        </div>
+
+        <h1 class="event-main-title">
+          <span class="gradient-text-warm fade-in delay-1">Soft</span><br>
+          <span class="fade-in delay-2">Life Era</span>
+        </h1>
+
+        <p class="event-subtitle fade-in delay-2">A love letter to doing less.</p>
+
+        <!-- Detail bar -->
+        <div class="event-detail-bar fade-in delay-3">
+          <div class="event-detail-item">
+            <span class="detail-icon">📅</span>
+            <div class="detail-text">
+              <span class="detail-label">Date</span>
+              <span class="detail-value">Saturday, May 24, 2025</span>
+            </div>
+          </div>
+          <div class="event-detail-item">
+            <span class="detail-icon">⏰</span>
+            <div class="detail-text">
+              <span class="detail-label">Time</span>
+              <span class="detail-value">19:00 – 22:00</span>
+            </div>
+          </div>
+          <div class="event-detail-item">
+            <span class="detail-icon">📍</span>
+            <div class="detail-text">
+              <span class="detail-label">Location</span>
+              <span class="detail-value">The Loft, Prenzlauer Berg</span>
+            </div>
+          </div>
+          <div class="event-detail-item">
+            <span class="detail-icon">📖</span>
+            <div class="detail-text">
+              <span class="detail-label">This month's book</span>
+              <span class="detail-value">Rest Is Resistance</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-cta fade-in delay-3">
+          <a href="#tickets"  class="btn btn-lime">Get tickets ↓</a>
+          <a href="#about"    class="btn btn-secondary">What to expect</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COUNTDOWN ==================== -->
+  <section style="padding: 48px 0 24px;" aria-label="Countdown to event">
+    <div class="container">
+      <p class="section-label fade-in" style="margin-bottom: 20px;">Time left</p>
+      <div class="countdown fade-in delay-1" id="countdown">
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-days">23</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <span class="countdown-sep" aria-hidden="true">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-hours">14</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <span class="countdown-sep" aria-hidden="true">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-mins">07</span>
+          <span class="countdown-label">Mins</span>
+        </div>
+        <span class="countdown-sep" aria-hidden="true">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-secs">42</span>
+          <span class="countdown-label">Secs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about" style="padding: 64px 0;">
+    <div class="container">
+      <div class="event-content-grid">
+
+        <!-- Description -->
+        <div>
+          <p class="section-label fade-in">The Book</p>
+          <h2 class="section-heading fade-in">
+            Rest Is<br><span class="gradient-text-warm">Resistance.</span>
+          </h2>
+
+          <div class="event-description fade-in delay-1">
+            <p>
+              What if resting was the most radical thing you could do? Tricia Hersey — aka the Nap Bishop — says yes. In <em>Rest Is Resistance</em>, she argues that our obsession with productivity is a form of oppression, and rest is how we push back.
+            </p>
+            <p>
+              It's part manifesto, part self-care bible, part critique of capitalism. And it's exactly the kind of book that sounds obvious until it completely reframes how you see your entire life.
+            </p>
+            <p>
+              We're reading it, arguing about it, and then drinking wine in a beautiful space in Prenzlauer Berg. Very on-theme.
+            </p>
+          </div>
+
+          <div class="venue-card glass fade-in delay-2" style="margin-top: 36px;">
+            <div class="venue-icon">📍</div>
+            <div>
+              <div class="venue-name">The Loft</div>
+              <div class="venue-address">Schönhauser Allee 36, 10435 Berlin-Prenzlauer Berg</div>
+              <a href="#" class="venue-link">Open in maps ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- What to expect -->
+        <div class="fade-in delay-2">
+          <div class="expect-card glass">
+            <p class="expect-title">What to expect</p>
+            <ul class="expect-list">
+              <li>
+                <span class="expect-icon">🌿</span>
+                <span>Themed welcome drinks and a soft playlist on arrival — no awkward standing around</span>
+              </li>
+              <li>
+                <span class="expect-icon">💬</span>
+                <span>Small group discussions in round tables — no monologues, everyone talks</span>
+              </li>
+              <li>
+                <span class="expect-icon">🎤</span>
+                <span>Full group conversation with the best moments from each table brought back in</span>
+              </li>
+              <li>
+                <span class="expect-icon">🎵</span>
+                <span>A curated playlist that fits the theme way too well (obviously)</span>
+              </li>
+              <li>
+                <span class="expect-icon">🥂</span>
+                <span>Drinks and snacks in the final hour — aka the real part</span>
+              </li>
+              <li>
+                <span class="expect-icon">✨</span>
+                <span>That feeling where you stay way longer than you planned and don't regret it</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HOST ==================== -->
+  <section style="padding: 24px 0 64px;">
+    <div class="container">
+      <p class="section-label fade-in">Your host</p>
+      <div class="host-card glass fade-in delay-1">
+        <div class="host-avatar" aria-hidden="true">🦄</div>
+        <div>
+          <div class="host-name">Lena K.</div>
+          <div class="host-role">Founder, Unicorn Book Club · chronic overthinker · avid napper</div>
+          <p class="host-bio">
+            Lena started UBC because she wanted a book club that felt like a party. Three years and 21 editions later, it does. She reads two books a week and still can't pick a favourite. Fitting host for this particular evening.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TICKETS ==================== -->
+  <section id="tickets">
+    <div class="container">
+      <div class="event-ticket-wrap">
+        <p class="section-label fade-in" style="justify-content: center; margin-bottom: 16px;">Secure your spot</p>
+        <h2 class="section-heading fade-in">Get <span class="gradient-text-warm">in.</span></h2>
+        <p class="fade-in delay-1" style="color:var(--text-muted);max-width:420px;margin:0 auto 0;font-size:1rem;line-height:1.65;">
+          Spots are limited. Like, <em style="color:var(--text);">actually</em> limited — this is not marketing speak. The venue holds 60 people. Max.
+        </p>
+
+        <div class="event-ticket-row">
+
+          <div class="event-ticket-card glass glass-hover fade-in delay-1">
+            <div class="ticket-type">Single entry</div>
+            <div class="ticket-name">Just the vibe</div>
+            <div class="ticket-price"><sup>€</sup>15</div>
+            <ul class="ticket-features" style="margin-bottom: 24px;">
+              <li><span class="tick">✓</span> Entry to the event</li>
+              <li><span class="tick">✓</span> Welcome drink</li>
+              <li><span class="tick">✓</span> Full program</li>
+              <li><span class="tick">✓</span> The good headache</li>
+            </ul>
+            <div class="ticket-spots">🔴 &nbsp;Only 12 spots left</div>
+            <a href="#" class="btn btn-secondary" style="margin-top: 16px; width: 100%;">Buy ticket — €15</a>
+          </div>
+
+          <div class="event-ticket-card glass glass-hover highlighted fade-in delay-2">
+            <span class="event-ticket-badge">Best value</span>
+            <div class="ticket-type">Entry + book</div>
+            <div class="ticket-name">Come prepared</div>
+            <div class="ticket-price"><sup>€</sup>28</div>
+            <ul class="ticket-features" style="margin-bottom: 24px;">
+              <li><span class="tick">✓</span> Everything above</li>
+              <li><span class="tick">✓</span> Physical book included</li>
+              <li><span class="tick">✓</span> Early access + priority entry</li>
+              <li><span class="tick">✓</span> Bragging rights, certified</li>
+            </ul>
+            <div class="ticket-spots">🟡 &nbsp;18 spots remaining</div>
+            <a href="#" class="btn btn-lime" style="margin-top: 16px; width: 100%;">Buy ticket — €28</a>
+          </div>
+
+        </div>
+
+        <p class="fade-in delay-3" style="margin-top:28px;font-size:13px;color:var(--text-subtle);">
+          Attending all summer? Grab the <a href="index.html#tickets" style="color:var(--text-muted);text-decoration:underline;">Season Pass (3 events) for €75</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BACK / MORE EVENTS ==================== -->
+  <section style="padding: 40px 0 80px; text-align: center; position: relative; z-index: 1;">
+    <div class="container">
+      <p style="font-size: 14px; color: var(--text-subtle); margin-bottom: 20px;">
+        Missed this edition? There's always a next one.
+      </p>
+      <a href="index.html" class="btn btn-secondary">← Back to all events</a>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">UBC<span style="color:var(--pink)">.</span></div>
+        <p class="footer-copy">© 2025 Unicorn Book Club · Berlin</p>
+        <ul class="footer-links">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="mailto:hello@unicornbookclub.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile CTA -->
+  <div class="sticky-cta" id="sticky-cta">
+    <a href="#tickets" class="btn btn-lime" style="width:100%;">Get tickets — from €15</a>
+  </div>
+
+  <script>
+    // Theme toggle — syncs all .theme-toggle buttons (nav + mobile menu)
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('ubc-theme', theme);
+      const isDark = theme === 'dark';
+      document.querySelectorAll('.theme-icon').forEach(el => {
+        el.textContent = isDark ? '☀' : '🌙';
+      });
+      document.querySelectorAll('.theme-toggle').forEach(btn => {
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      });
+    }
+
+    setTheme(localStorage.getItem('ubc-theme') || 'light');
+
+    document.querySelectorAll('.theme-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    });
+
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('active', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Fade in observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.event-hero .fade-in').forEach(el => el.classList.add('visible'));
+    });
+
+    // Countdown to May 24, 2025 19:00 Berlin time
+    const eventDate = new Date('2025-05-24T19:00:00+02:00');
+
+    function updateCountdown() {
+      const now  = new Date();
+      const diff = eventDate - now;
+
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML =
+          '<p style="color:var(--lime);font-weight:700;font-size:1.2rem;">The event is live! 🎉</p>';
+        return;
+      }
+
+      const days  = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const mins  = Math.floor((diff % 3600000)  / 60000);
+      const secs  = Math.floor((diff % 60000)    / 1000);
+
+      const pad = n => String(n).padStart(2, '0');
+      document.getElementById('cd-days').textContent  = pad(days);
+      document.getElementById('cd-hours').textContent = pad(hours);
+      document.getElementById('cd-mins').textContent  = pad(mins);
+      document.getElementById('cd-secs').textContent  = pad(secs);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Hide sticky CTA once ticket section is visible
+    const ticketSection = document.getElementById('tickets');
+    const stickyCTA     = document.getElementById('sticky-cta');
+
+    const ticketObserver = new IntersectionObserver((entries) => {
+      stickyCTA.style.opacity = entries[0].isIntersecting ? '0' : '1';
+      stickyCTA.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+    }, { threshold: 0.2 });
+
+    ticketObserver.observe(ticketSection);
+    stickyCTA.style.transition = 'opacity 0.3s';
+  </script>
+</body>
+</html>

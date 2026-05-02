@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Unicorn Book Club, Május 29, 2026. Budapest. Mesterséges intelligencia">
+  <title>2026 május 29. — Unicorn Book Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script>
+    /* Prevent flash of wrong theme on load */
+    (function () {
+      var t = localStorage.getItem('ubc-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    }());
+  </script>
+
+  <style>
+    /* Event-specific orb override — cyan/lime palette for this edition 
+    .orb-1 { background: radial-gradient(circle, #00C8FF 0%, transparent 68%); opacity: 0.45; }
+    .orb-2 { background: radial-gradient(circle, #C3FF00 0%, transparent 68%); opacity: 0.28; }
+    .orb-3 { background: radial-gradient(circle, #BF00FF 0%, transparent 68%); opacity: 0.38; }
+    .orb-4 { background: radial-gradient(circle, #00C8FF 0%, transparent 68%); opacity: 0.2; } */
+
+    /* Immersive hero mesh gradient unique to this event */
+    .event-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 20%, rgba(195,255,0,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 20% 70%, rgba(0,200,255,0.1) 0%, transparent 60%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Countdown bar */
+    .countdown {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .countdown-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-sm);
+      min-width: 72px;
+    }
+
+    .countdown-num {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text);
+    }
+
+    .countdown-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+      margin-top: 4px;
+    }
+
+    .countdown-sep {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--text-subtle);
+      padding: 10px 0;
+      line-height: 1;
+      align-self: flex-start;
+    }
+
+    /* Edition badge strip */
+    .edition-strip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 10px 28px;
+      background: rgba(195,255,0,0.08);
+      border-bottom: 1px solid rgba(195,255,0,0.15);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(195,255,0,0.7);
+      overflow: hidden;
+      visibility: hidden;
+    }
+
+    .edition-strip span { white-space: nowrap; }
+
+    /* Map / venue card */
+    .venue-card {
+      padding: 28px 32px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .venue-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-sm);
+      background: rgba(0,200,255,0.1);
+      border: 1px solid rgba(0,200,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .venue-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .venue-address {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .venue-link {
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--cyan);
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .venue-link:hover { opacity: 0.7; }
+
+    /* Sticky ticket CTA on mobile */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 90;
+      padding: 16px 20px;
+      background: rgba(6,0,14,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--card-border);
+    }
+
+    @media (max-width: 768px) {
+      .sticky-cta { display: block; }
+      body { padding-bottom: 80px; }
+    }
+
+    /* Texture stripe on event hero */
+    .edition-number {
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      font-size: 14vw;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,0.04);
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Grain -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Orbs (overridden to cyan/lime palette for this event) -->
+  <div class="orb-container" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+
+  <!-- ==================== NAV ==================== -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/index.html" class="nav-logo">unicorn <span>book club</span></a>
+
+        <ul class="nav-links">
+          <li><a href="/index.html">Főoldal</a></li>
+          <li><a href="/index.html#archive">Korábbi események</a></li>
+          <li><a href="/index.html#tickets">Belépők</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="#tickets" class="btn btn-lime">Jegyek</a>
+        </div>
+
+        <button class="theme-toggle nav-theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true">
+    <a href="/index.html"         class="mobile-link">Főoldal</a>
+    <a href="/index.html#archive" class="mobile-link">Korábbi események</a>
+    <a href="#tickets"           class="mobile-link">Jegyek</a>
+    <a href="#tickets" class="btn btn-lime" style="margin-top: 12px;">Csatlakozom!</a>
+    <div class="mobile-theme-row">
+      <span class="mobile-theme-label">Sötét téma</span>
+      <button class="theme-toggle" aria-label="Switch to dark mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== EVENT HERO ==================== -->
+  <section class="event-hero" id="home">
+    <!-- Edition marquee strip -->
+    <div class="edition-strip" aria-hidden="true">
+      <span>✦ No. 10</span>
+      <span>✦ Május 2026</span>
+      <span>✦ FreeSZFE FREEDOM</span>
+      <span>✦ What's next is now</span>
+      <span>✦ Mesterséges intelligencia, jövő</span>
+      <span>✦ Május 2026</span>
+      <span>✦ Budapest</span>
+    </div>
+
+    <div class="event-hero-gradient" aria-hidden="true"></div>
+
+    <!-- Large watermark number -->
+    <div class="edition-number" aria-hidden="true">07</div>
+
+    <div class="container">
+      <div class="event-hero-content">
+
+        <div class="event-edition-tag fade-in">
+          Unicorn Book Club #10
+        </div>
+
+        <h1 class="event-main-title">
+          <span class="gradient-text-warm fade-in delay-1">Jövőnk</span><br>
+          <span class="fade-in delay-2">Az AI tükrében</span>
+        </h1>
+
+        <p class="event-subtitle fade-in delay-2">Tervezd a jelent, formáld a jövőt</p>
+
+        <!-- Detail bar -->
+        <div class="event-detail-bar fade-in delay-3">
+          <div class="event-detail-item">
+            <span class="detail-icon">📅</span>
+            <div class="detail-text">
+              <span class="detail-label">Dátum</span>
+              <span class="detail-value">Május 29, 2026</span>
+            </div>
+          </div>
+          <div class="event-detail-item">
+            <span class="detail-icon">⏰</span>
+            <div class="detail-text">
+              <span class="detail-label">Idő</span>
+              <span class="detail-value">19:00 – 23:30</span>
+            </div>
+          </div>
+          <div class="event-detail-item">
+            <span class="detail-icon">📍</span>
+            <div class="detail-text">
+              <span class="detail-label">Helyszín</span>
+              <span class="detail-value">FreeSZFE FREEDOM</span>
+            </div>
+          </div>
+          <div class="event-detail-item">
+            <span class="detail-icon">📖</span>
+            <div class="detail-text">
+              <span class="detail-label">A hónap könyve</span>
+              <span class="detail-value">Frederik G. Pferdt: What's next is now</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-cta fade-in delay-3">
+          <a href="#tickets"  class="btn btn-lime">Jegyek ↓</a>
+          <a href="#about"    class="btn btn-secondary">Mire számítsak?</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COUNTDOWN ==================== -->
+  <section style="padding: 48px 0 24px;" aria-label="Countdown to event">
+    <div class="container">
+      <p class="section-label fade-in" style="margin-bottom: 20px;">Time left</p>
+      <div class="countdown fade-in delay-1" id="countdown">
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-days">23</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <span class="countdown-sep" aria-hidden="true">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-hours">14</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <span class="countdown-sep" aria-hidden="true">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-mins">07</span>
+          <span class="countdown-label">Mins</span>
+        </div>
+        <span class="countdown-sep" aria-hidden="true">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-secs">42</span>
+          <span class="countdown-label">Secs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about" style="padding: 64px 0;">
+    <div class="container">
+      <div class="event-content-grid">
+
+        <!-- Description -->
+        <div>
+          <p class="section-label fade-in">A könyv</p>
+          <h2 class="section-heading fade-in">
+            What's next <span class="gradient-text-warm">is now</span>
+          </h2>
+
+          <div class="event-description fade-in delay-1">
+            <p>
+            📖 Május 29-én a <strong><a href="https://www.indapresskiado.hu/products/whats-next-is-now-tervezd-a-jelent" target="_blank"> What's next is now – Tervezd a jelent, formáld a jövőt</a></strong> című könyv alapján arról fogunk beszélgetni, hogy hogyan tervezzük a jövőt a mesterséges intelligencia tükrében. Mi lesz, ha minden munkát helyettesíteni tud az AI? Hogyan készüljünk egy jövőre, ahol megszűnhet a gazdaság?
+            </p>
+            <p>
+              A szerző, Dr. Frederik G. Pferdt (Google, Stanford Egyetem) — azt állítja, hogy a jövő nem valami félelmetes ismeretlen, hanem valami, amit mi magunk formálunk. A könyv hat alapelv köré épül, amelyek segítségével kialakítható egy úgynevezett future-ready, azaz „jövőre kész" szemléletmód:
+            </p>
+            <p>
+              <li>optimizmus</li>
+              <li>nyitottság</li>
+              <li>kíváncsiság</li>
+              <li>kísérletezés</li>
+              <li>empátia, és</li>
+              <li>az egyéni nézőpontot jelképező „X dimenzió"</li>
+            </p>
+            <p>
+              Pferdt a Google innovációs kultúrájából merített tapasztalatait, személyes történeteit és gyakorlati gyakorlatokat ötvöz, hogy az olvasókat segítse átlépni a passzív várakozásból az aktív jövőformálásba — és a bizonytalanságot lehetőséggé alakítani. 
+            </p>
+            <p>
+              Akkor is gyere, ha nem olvastad a könyvet!
+            </p>
+          </div>
+
+          <div class="venue-card glass fade-in delay-2" style="margin-top: 36px;">
+            <div class="venue-icon">📍</div>
+            <div>
+              <div class="venue-name">FreeSZFE FREEDOM</div>
+              <div class="venue-address">Budapest, Szabolcs u. 27, 1134</div>
+              <a href="https://maps.app.goo.gl/F44aFiF7gMS15z717" class="venue-link" target="_blank">Google maps ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- What to expect -->
+        <div class="fade-in delay-2">
+          <div class="expect-card glass">
+            <p class="expect-title">Mire számíts?</p>
+            <ul class="expect-list">
+              <li>
+                <span class="expect-icon">🎶</span>
+                <span>18:30-tól érkezés, kellemes háttérzenével</span>
+              </li>
+              <li>
+                <span class="expect-icon">🎤</span>
+                <span>19:00-kor kezdjük a beszélgetést a szakértőnkkel, kb egy órát beszélgetünk a témáról</span>
+              </li>
+              <li>
+                <span class="expect-icon">💬</span>
+                <span>Kisebb csoportokra osztódunk, és 4-5 fős körökben egyénileg is átbeszéljük a témát</span>
+              </li>
+              <li>
+                <span class="expect-icon">✅</span>
+                <span>Adunk egy pontszámot a könyvre, és kiválasztjuk a következő havi olvasmányunkat</span>
+              </li>
+              <li>
+                <span class="expect-icon">🍹</span>
+                <span>A kötelező körök után nyit a pult, és megkóstolhatjuk a hónap koktélját</span>
+              </li>
+              <li>
+                <span class="expect-icon">✨</span>
+                <span>A hely zárásáig maradhatunk, ideális esetben észre sem vesszük, hogy lrepült az idő.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HOST ==================== -->
+  <section style="padding: 24px 0 64px;">
+    <div class="container">
+      <p class="section-label fade-in">Vendégünk</p>
+      <div class="host-card glass fade-in delay-1">
+        <div class="host-avatar" aria-hidden="true">🦄</div>
+        <div>
+          <div class="host-name">Szklenár Ádám</div>
+          <div class="host-role">A Unicorn Book Club alapítója · zeneszerző</div>
+          <p class="host-bio">
+            Ádám azért alapította a Unicorn Book Clubot, mert szeretett volna aktuális, fontos és hasznos témákat behozni a magyar közbeszédbe. Ezzel a formátummal egy Londonban találkozott.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TICKETS ==================== -->
+  <section id="tickets">
+    <div class="container">
+      <div class="event-ticket-wrap">
+        <p class="section-label fade-in" style="justify-content: center; margin-bottom: 16px;">Biztosítsd be a helyedet</p>
+        <h2 class="section-heading fade-in">Csatlakozz <span class="gradient-text-warm">hozzánk</span></h2>
+        <p class="fade-in delay-1" style="color:var(--text-muted);max-width:420px;margin:0 auto 0;font-size:1rem;line-height:1.65;">
+          A helyek száma limitált. <em style="color:var(--text);">Tényleg</em> limitáltak. A csoportos beszélgetések ideális létszáma miatt maximum 40 fő jöhet egy alkalomra. 
+        </p>
+
+        <div class="event-ticket-row">
+
+          <div class="event-ticket-card glass glass-hover fade-in delay-1">
+            <div class="ticket-type">Kedvezményes belépő</div>
+            <div class="ticket-name">Első alkalom/Diák</div>
+            <div class="ticket-price">2400<sup>Ft</sup></div>
+            <ul class="ticket-features" style="margin-bottom: 24px;">
+              <li><span class="tick">✓</span> Belépés az eseményre</li>
+              <li><span class="tick">✓</span> Csatlakozz a Messenger csoportunkhoz</li>
+              <li><span class="tick">✓</span> Vegyél részt a beszélgetésekben</li>
+              <li><span class="tick">✓</span> Menj haza tájékozottan a hónap témájáról</li>
+            </ul>
+            <div class="ticket-spots">🔴 &nbsp; 12 jegy max</div>
+            <a href="https://freeszfe.jegyx1.hu/esemeny/12498/unicorn-book-club-%E2%80%93-jovo-az-ai-tukreben/2026-05-29-19-00" class="btn btn-secondary" style="margin-top: 16px; width: 100%;">Jegyvásárlás</a>
+          </div>
+
+          <div class="event-ticket-card glass glass-hover highlighted fade-in delay-2">
+            <span class="event-ticket-badge">Népszerű</span>
+            <div class="ticket-type">Unicorn Book Club</div>
+            <div class="ticket-name">Belépő</div>
+            <div class="ticket-price">3000<sup>Ft</sup></div>
+            <ul class="ticket-features" style="margin-bottom: 24px;">
+              <li><span class="tick">✓</span> Belépés az eseményre</li>
+              <li><span class="tick">✓</span> Csatlakozz a Messenger csoportunkhoz</li>
+              <li><span class="tick">✓</span> Vegyél részt a beszélgetésekben</li>
+              <li><span class="tick">✓</span> Menj haza tájékozottan a hónap témájáról</li>
+            </ul>
+            <div class="ticket-spots">🟡 &nbsp;20 fő max</div>
+            <a href="https://freeszfe.jegyx1.hu/esemeny/12498/unicorn-book-club-%E2%80%93-jovo-az-ai-tukreben/2026-05-29-19-00" class="btn btn-lime" style="margin-top: 16px; width: 100%;">Jegyvásárlás</a>
+          </div>
+
+          <div class="event-ticket-card glass glass-hover fade-in delay-3">
+            <span class="event-ticket-badge">Könyvvel</span>
+            <div class="ticket-type">Olvasónak</div>
+            <div class="ticket-name">Belépő + könyv</div>
+            <div class="ticket-price">6990<sup>Ft</sup></div>
+            <ul class="ticket-features" style="margin-bottom: 24px;">
+              <li><span class="tick">✓</span> Elpostázzuk neked a hónap könyvét</li>
+            <li><span class="tick">✓</span> Belépés az eseményre</li>
+            <li><span class="tick">✓</span> A könyv mellett egy kis emléket is kapsz az előző eseményről</li>
+            <li><span class="tick">✓</span> Menj haza tájékozottan a hónap témájáról</li>
+            </ul>
+            <a href="https://buy.stripe.com/cNi4gzdIY3AE3j16F2ew80f" class="btn btn-secondary" style="margin-top: 16px; width: 100%;">Jegyvásárlás</a>
+          </div>
+
+          <div class="event-ticket-card glass glass-hover highlighted fade-in delay-2">
+            <span class="event-ticket-badge">Elkötelezetteknek</span>
+            <div class="ticket-type">Unicorn Book Club</div>
+            <div class="ticket-name">Támogatói jegy</div>
+            <div class="ticket-price">9990<sup>Ft</sup></div>
+            <ul class="ticket-features" style="margin-bottom: 24px;">
+              <li><span class="tick">✓</span> Elpostázzuk neked a hónap könyvét</li>
+            <li><span class="tick">✓</span> A könyv mellett egy kis emléket is kapsz az előző eseményről</li>
+            <li><span class="tick">✓</span> Vegyél részt a beszélgetésekben</li>
+            <li><span class="tick">✓</span> Menj haza tájékozottan a hónap témájáról</li>
+            </ul>
+            <a href="https://buy.stripe.com/3cI8wP6gwgnq1aTe7uew80e" class="btn btn-lime" style="margin-top: 16px; width: 100%;">Jegyvásárlás</a>
+          </div>
+
+        </div>
+
+        <p class="fade-in delay-3" style="margin-top:28px;font-size:13px;color:var(--text-subtle);">
+          Ha komolyan veszed az önfejlesztést: <a href="https://buy.stripe.com/bJeaEXawM6MQ6vdd3qew805" style="color:var(--text-muted);text-decoration:underline;">3 alkalmas bérletünk 6990 Ft-ért</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BACK / MORE EVENTS ==================== -->
+  <section style="padding: 40px 0 80px; text-align: center; position: relative; z-index: 1;">
+    <div class="container">
+      <p style="font-size: 14px; color: var(--text-subtle); margin-bottom: 20px;">
+        Mikről beszélgettünk eddig?
+      </p>
+      <a href="/index.html" class="btn btn-secondary">← Korábbi eseményeink</a>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">unicorn <span style="color:var(--pink)">book club</span></div>
+        <p class="footer-copy">© 2026 Unicorn Book Club · Budapest</p>
+        <ul class="footer-links">
+          <li><a href="https://drive.google.com/file/d/1TfiXxspkw2NenUjFaOICq8roDLTPDU0N/view?usp=sharing">Adatkezelési tájékoztató</a></li>
+          <li><a href="mailto:unicornbookclubhq@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile CTA -->
+  <div class="sticky-cta" id="sticky-cta">
+    <a href="#tickets" class="btn btn-lime" style="width:100%;">Jegyek 2400 Ft-tól</a>
+  </div>
+
+  <script>
+    // Theme toggle — syncs all .theme-toggle buttons (nav + mobile menu)
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('ubc-theme', theme);
+      const isDark = theme === 'dark';
+      document.querySelectorAll('.theme-icon').forEach(el => {
+        el.textContent = isDark ? '☀' : '🌙';
+      });
+      document.querySelectorAll('.theme-toggle').forEach(btn => {
+        btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      });
+    }
+
+    setTheme(localStorage.getItem('ubc-theme') || 'light');
+
+    document.querySelectorAll('.theme-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    });
+
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('active', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Fade in observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.event-hero .fade-in').forEach(el => el.classList.add('visible'));
+    });
+
+    // Countdown to May 29, 2026 19:00 Budapest time
+    const eventDate = new Date('2026-05-29T19:00:00+02:00');
+
+    function updateCountdown() {
+      const now  = new Date();
+      const diff = eventDate - now;
+
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML =
+          '<p style="color:var(--lime);font-weight:700;font-size:1.2rem;">The event is live! 🎉</p>';
+        return;
+      }
+
+      const days  = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const mins  = Math.floor((diff % 3600000)  / 60000);
+      const secs  = Math.floor((diff % 60000)    / 1000);
+
+      const pad = n => String(n).padStart(2, '0');
+      document.getElementById('cd-days').textContent  = pad(days);
+      document.getElementById('cd-hours').textContent = pad(hours);
+      document.getElementById('cd-mins').textContent  = pad(mins);
+      document.getElementById('cd-secs').textContent  = pad(secs);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Hide sticky CTA once ticket section is visible
+    const ticketSection = document.getElementById('tickets');
+    const stickyCTA     = document.getElementById('sticky-cta');
+
+    const ticketObserver = new IntersectionObserver((entries) => {
+      stickyCTA.style.opacity = entries[0].isIntersecting ? '0' : '1';
+      stickyCTA.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+    }, { threshold: 0.2 });
+
+    ticketObserver.observe(ticketSection);
+    stickyCTA.style.transition = 'opacity 0.3s';
+  </script>
+</body>
+</html>
