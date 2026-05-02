@@ -4,7 +4,8 @@
    VARIABLES
    ============================================================ */
 :root {
-  --pink:        #FF2A6D;
+  --pink:        #FD358F;
+  --pink-dark:        #65012e; 
   --pink-glow:   rgba(255, 42, 109, 0.3);
   --purple:      #BF00FF;
   --purple-glow: rgba(191, 0, 255, 0.25);
