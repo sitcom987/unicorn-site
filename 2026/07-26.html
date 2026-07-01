@@ -203,6 +203,147 @@
       body { padding-bottom: 80px; }
     }
 
+    /* ══════════════════════════════════════════════════════════
+       EVENT COLOUR SCHEMES
+       data-event-scheme on <body> drives orbs / strip / cta
+       ══════════════════════════════════════════════════════════ */
+
+    /* ── PINK / MAGENTA ── */
+    [data-event-scheme="pink"] .orb-1 { background: radial-gradient(circle,#FF2A6D 0%,transparent 68%); opacity:.50; }
+    [data-event-scheme="pink"] .orb-2 { background: radial-gradient(circle,#FF007A 0%,transparent 68%); opacity:.30; }
+    [data-event-scheme="pink"] .orb-3 { background: radial-gradient(circle,#BF00FF 0%,transparent 68%); opacity:.38; }
+    [data-event-scheme="pink"] .orb-4 { background: radial-gradient(circle,#FF2A6D 0%,transparent 68%); opacity:.18; }
+
+    [data-event-scheme="pink"] .event-hero::before {
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 20%, rgba(255,42,109,.16) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 20% 70%, rgba(255,0,122,.10) 0%, transparent 60%);
+    }
+    [data-event-scheme="pink"] .edition-strip {
+      background: rgba(255,42,109,.08);
+      border-bottom-color: rgba(255,42,109,.18);
+      color: rgba(255,100,140,.85);
+    }
+    [data-event-scheme="pink"] .event-main-title .gradient-text-warm {
+      background-image: linear-gradient(135deg, #FF2A6D 0%, #FF007A 50%, #BF00FF 100%);
+    }
+    [data-event-scheme="pink"] .btn-lime {
+      background: linear-gradient(135deg, #FF2A6D 0%, #C4005A 100%);
+      color: #fff;
+      box-shadow: 0 0 28px rgba(255,42,109,.4);
+    }
+    [data-event-scheme="pink"] .btn-lime:hover {
+      background: linear-gradient(135deg, #FF5590 0%, #FF2A6D 100%);
+      box-shadow: 0 0 40px rgba(255,42,109,.55);
+    }
+    [data-event-scheme="pink"] .venue-icon { background: rgba(255,42,109,.1); border-color: rgba(255,42,109,.22); }
+    [data-event-scheme="pink"] .venue-link  { color: #FF2A6D; }
+
+    /* ── CYAN / ELECTRIC ── */
+    [data-event-scheme="cyan"] .orb-1 { background: radial-gradient(circle,#00C8FF 0%,transparent 68%); opacity:.52; }
+    [data-event-scheme="cyan"] .orb-2 { background: radial-gradient(circle,#0066FF 0%,transparent 68%); opacity:.35; }
+    [data-event-scheme="cyan"] .orb-3 { background: radial-gradient(circle,#00C8FF 0%,transparent 68%); opacity:.28; }
+    [data-event-scheme="cyan"] .orb-4 { background: radial-gradient(circle,#BF00FF 0%,transparent 68%); opacity:.20; }
+
+    [data-event-scheme="cyan"] .event-hero::before {
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 20%, rgba(0,200,255,.16) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 20% 70%, rgba(0,102,255,.12) 0%, transparent 60%);
+    }
+    [data-event-scheme="cyan"] .edition-strip {
+      background: rgba(0,200,255,.08);
+      border-bottom-color: rgba(0,200,255,.18);
+      color: rgba(0,200,255,.85);
+    }
+    [data-event-scheme="cyan"] .event-main-title .gradient-text-warm {
+      background-image: linear-gradient(135deg, #00C8FF 0%, #0066FF 50%, #BF00FF 100%);
+    }
+    [data-event-scheme="cyan"] .btn-lime {
+      background: linear-gradient(135deg, #00C8FF 0%, #0077CC 100%);
+      color: #fff;
+      box-shadow: 0 0 28px rgba(0,200,255,.4);
+    }
+    [data-event-scheme="cyan"] .btn-lime:hover {
+      background: linear-gradient(135deg, #33D4FF 0%, #00C8FF 100%);
+      box-shadow: 0 0 40px rgba(0,200,255,.55);
+    }
+    [data-event-scheme="cyan"] .venue-icon { background: rgba(0,200,255,.1); border-color: rgba(0,200,255,.22); }
+    [data-event-scheme="cyan"] .venue-link  { color: #00C8FF; }
+
+    /* ── FIRE / SUNSET ── */
+    [data-event-scheme="fire"] .orb-1 { background: radial-gradient(circle,#FF6432 0%,transparent 68%); opacity:.52; }
+    [data-event-scheme="fire"] .orb-2 { background: radial-gradient(circle,#FF2A6D 0%,transparent 68%); opacity:.35; }
+    [data-event-scheme="fire"] .orb-3 { background: radial-gradient(circle,#FFAA00 0%,transparent 68%); opacity:.30; }
+    [data-event-scheme="fire"] .orb-4 { background: radial-gradient(circle,#FF4500 0%,transparent 68%); opacity:.20; }
+
+    [data-event-scheme="fire"] .event-hero::before {
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 20%, rgba(255,100,50,.16) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 20% 70%, rgba(255,42,109,.10) 0%, transparent 60%);
+    }
+    [data-event-scheme="fire"] .edition-strip {
+      background: rgba(255,100,50,.08);
+      border-bottom-color: rgba(255,100,50,.18);
+      color: rgba(255,150,80,.9);
+    }
+    [data-event-scheme="fire"] .event-main-title .gradient-text-warm {
+      background-image: linear-gradient(135deg, #FFAA00 0%, #FF6432 50%, #FF2A6D 100%);
+    }
+    [data-event-scheme="fire"] .btn-lime {
+      background: linear-gradient(135deg, #FF6432 0%, #CC2800 100%);
+      color: #fff;
+      box-shadow: 0 0 28px rgba(255,100,50,.4);
+    }
+    [data-event-scheme="fire"] .btn-lime:hover {
+      background: linear-gradient(135deg, #FF8855 0%, #FF6432 100%);
+      box-shadow: 0 0 40px rgba(255,100,50,.55);
+    }
+    [data-event-scheme="fire"] .venue-icon { background: rgba(255,100,50,.1); border-color: rgba(255,100,50,.22); }
+    [data-event-scheme="fire"] .venue-link  { color: #FF6432; }
+
+    /* ── MYSTIC / AURORA ── */
+    [data-event-scheme="mystic"] .orb-1 { background: radial-gradient(circle,#BF00FF 0%,transparent 68%); opacity:.52; }
+    [data-event-scheme="mystic"] .orb-2 { background: radial-gradient(circle,#6600FF 0%,transparent 68%); opacity:.38; }
+    [data-event-scheme="mystic"] .orb-3 { background: radial-gradient(circle,#FF2A6D 0%,transparent 68%); opacity:.28; }
+    [data-event-scheme="mystic"] .orb-4 { background: radial-gradient(circle,#9900CC 0%,transparent 68%); opacity:.22; }
+
+    [data-event-scheme="mystic"] .event-hero::before {
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 20%, rgba(191,0,255,.16) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 20% 70%, rgba(102,0,255,.12) 0%, transparent 60%);
+    }
+    [data-event-scheme="mystic"] .edition-strip {
+      background: rgba(191,0,255,.08);
+      border-bottom-color: rgba(191,0,255,.18);
+      color: rgba(191,0,255,.85);
+    }
+    [data-event-scheme="mystic"] .event-main-title .gradient-text-warm {
+      background-image: linear-gradient(135deg, #BF00FF 0%, #6600FF 50%, #FF2A6D 100%);
+    }
+    [data-event-scheme="mystic"] .btn-lime {
+      background: linear-gradient(135deg, #BF00FF 0%, #5500BB 100%);
+      color: #fff;
+      box-shadow: 0 0 28px rgba(191,0,255,.4);
+    }
+    [data-event-scheme="mystic"] .btn-lime:hover {
+      background: linear-gradient(135deg, #CC33FF 0%, #BF00FF 100%);
+      box-shadow: 0 0 40px rgba(191,0,255,.55);
+    }
+    [data-event-scheme="mystic"] .venue-icon { background: rgba(191,0,255,.1); border-color: rgba(191,0,255,.22); }
+    [data-event-scheme="mystic"] .venue-link  { color: #BF00FF; }
+
+    /* ── Light-mode scheme overrides (edition strip colour stays on-brand) ── */
+    [data-theme="light"] [data-event-scheme="pink"]   .edition-strip { background: rgba(255,42,109,.1);  border-bottom-color: rgba(255,42,109,.18);  color: rgba(200,0,60,.65); }
+    [data-theme="light"] [data-event-scheme="cyan"]   .edition-strip { background: rgba(0,200,255,.1);   border-bottom-color: rgba(0,200,255,.18);   color: rgba(0,140,190,.75); }
+    [data-theme="light"] [data-event-scheme="fire"]   .edition-strip { background: rgba(255,100,50,.1);  border-bottom-color: rgba(255,100,50,.18);  color: rgba(200,60,0,.75); }
+    [data-theme="light"] [data-event-scheme="mystic"] .edition-strip { background: rgba(191,0,255,.08);  border-bottom-color: rgba(191,0,255,.16);   color: rgba(140,0,200,.7); }
+
+    [data-theme="light"] [data-event-scheme="pink"]   .event-hero::before { background: radial-gradient(ellipse 80% 60% at 70% 20%, rgba(255,42,109,.18) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 20% 70%, rgba(255,0,122,.12) 0%, transparent 60%); }
+    [data-theme="light"] [data-event-scheme="cyan"]   .event-hero::before { background: radial-gradient(ellipse 80% 60% at 70% 20%, rgba(0,200,255,.20) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 20% 70%, rgba(0,102,255,.14) 0%, transparent 60%); }
+    [data-theme="light"] [data-event-scheme="fire"]   .event-hero::before { background: radial-gradient(ellipse 80% 60% at 70% 20%, rgba(255,100,50,.18) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 20% 70%, rgba(255,42,109,.12) 0%, transparent 60%); }
+    [data-theme="light"] [data-event-scheme="mystic"] .event-hero::before { background: radial-gradient(ellipse 80% 60% at 70% 20%, rgba(191,0,255,.18) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 20% 70%, rgba(102,0,255,.14) 0%, transparent 60%); }
+
+
     /* Texture stripe on event hero */
     .edition-number {
       position: absolute;
@@ -220,7 +361,7 @@
     }
   </style>
 </head>
-<body>
+<body data-event-scheme="pink">
 
   <!-- Grain -->
   <div class="grain" aria-hidden="true"></div>
@@ -386,7 +527,7 @@
         <div>
           <p class="section-label fade-in">A könyv</p>
           <h2 class="section-heading fade-in">
-            Adam Grant: <span class="gradient-text-warm">Eredetik</span>
+            Adam Grant: <span class="gradient-text-warm fade-in delay-1">Eredetik</span>
           </h2>
 
           <div class="event-description fade-in delay-1">
@@ -658,6 +799,21 @@
         hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       });
+    });
+
+    // Colour scheme switcher
+    function setScheme(scheme) {
+      document.body.setAttribute('data-event-scheme', scheme);
+      localStorage.setItem('ubc-event-scheme', scheme);
+      document.querySelectorAll('.scheme-dot').forEach(dot => {
+        dot.classList.toggle('active', dot.dataset.scheme === scheme);
+      });
+    }
+
+    setScheme(localStorage.getItem('ubc-event-scheme') || 'pink');
+
+    document.querySelectorAll('.scheme-dot').forEach(dot => {
+      dot.addEventListener('click', () => setScheme(dot.dataset.scheme));
     });
 
     // Fade in observer
