@@ -359,6 +359,24 @@
       user-select: none;
       white-space: nowrap;
     }
+
+    .videocontainer {
+      position: relative;
+      width: 100%;
+      max-width: 650px;
+      height: 0;
+      padding-bottom: 56.25%;
+    }
+
+    .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    }
+
+
   </style>
 </head>
 <body data-event-scheme="fire">
@@ -537,7 +555,9 @@
             Előző beszélgetésünk Adrival a tudatos párválasztásról:
             <br>
           </p>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/jwFeG9H8m5M?si=foIdB5zXSt8uk2KB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div class="videocontainer">
+          <iframe src="https://www.youtube.com/embed/jwFeG9H8m5M?si=foIdB5zXSt8uk2KB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
           <p>
             Vannak kérdéseid a szexszel kapcsolatban? Például, hogy hogyan épül fel az orgazmus? Mik lehetnek hatással a szexuális vágyra? Hogyan tartható fenn a tűz egy hosszú távú kapcsolatban? Számít-e a méret? Ha szeretnél ezekre, és más a kérdésekre megbízható választ kapni, akkor ez a rendhagyó kézikönyv neked szól!
             <br><br>
