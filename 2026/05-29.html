@@ -1,27 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CF0XF2BL5M"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-CF0XF2BL5M');
-        </script>
-
-    <!-- Meta Pixel Code -->
-        <script>
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
-        (window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1480966523148553'); fbq('track', 'PageView');
-        </script>
-        <noscript> <img height="1" width="1" src="https://www.facebook.com/tr?id=1480966523148553&ev=PageView&noscript=1"/>
-        </noscript>
-        <!-- End Meta Pixel Code -->
-
   <meta charset="UTF-8">
+  <!-- Cookie consent: Google tag + Meta Pixel load only after the visitor agrees (see cookie-consent.js) -->
+  <link rel="stylesheet" href="/cookie-consent.css">
+  <script src="/cookie-consent.js"></script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no" />
 
@@ -70,12 +54,12 @@
   <nav class="nav" id="nav">
     <div class="container">
       <div class="nav-inner">
-        <a href="/index.html" class="nav-logo">unicorn <span>book club</span></a>
+        <a href="/" class="nav-logo">unicorn <span>book club</span></a>
 
         <ul class="nav-links">
-          <li><a href="/index.html">Főoldal</a></li>
-          <li><a href="/index.html#archive">Korábbi események</a></li>
-          <li><a href="/index.html#tickets">Belépők</a></li>
+          <li><a href="/">Főoldal</a></li>
+          <li><a href="/#archive">Korábbi események</a></li>
+          <li><a href="/#tickets">Belépők</a></li>
         </ul>
 
         <div class="nav-cta">
@@ -97,8 +81,8 @@
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true">
-    <a href="/index.html"         class="mobile-link">Főoldal</a>
-    <a href="/index.html#archive" class="mobile-link">Korábbi események</a>
+    <a href="/"         class="mobile-link">Főoldal</a>
+    <a href="/#archive" class="mobile-link">Korábbi események</a>
     <a href="#tickets"           class="mobile-link">Jegyek</a>
     <a href="#tickets" class="btn btn-lime" style="margin-top: 12px;">Csatlakozom!</a>
     <div class="mobile-theme-row">
@@ -418,7 +402,7 @@
       <p style="font-size: 14px; color: var(--text-subtle); margin-bottom: 20px;">
         Mikről beszélgettünk eddig?
       </p>
-      <a href="/index.html" class="btn btn-secondary">← Korábbi eseményeink</a>
+      <a href="/" class="btn btn-secondary">← Korábbi eseményeink</a>
     </div>
   </section>
 
@@ -430,6 +414,7 @@
         <p class="footer-copy">© 2026 Unicorn Book Club · Budapest</p>
         <ul class="footer-links">
           <li><a href="https://drive.google.com/file/d/1TfiXxspkw2NenUjFaOICq8roDLTPDU0N/view?usp=sharing">Adatkezelési tájékoztató</a></li>
+          <li><a href="#" data-cookie-settings>Cookie beállítások</a></li>
           <li><a href="mailto:unicornbookclubhq@gmail.com">Email</a></li>
         </ul>
       </div>
@@ -444,7 +429,7 @@
   <script src="/script-event.js"></script>
 
   <script>
-    // Countdown to May 29, 2026 19:00 Budapest time
+    // Countdown timer
     const eventDate = new Date('2026-05-29T19:00:00+02:00');
 
     function updateCountdown() {
