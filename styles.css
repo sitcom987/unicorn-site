@@ -706,6 +706,32 @@ section {
   margin-bottom: 4px;
 }
 
+/* Archive cards that have an event page: the title link covers the whole card */
+.archive-card { position: relative; }
+
+.archive-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+
+.archive-link { transition: color 0.2s var(--ease); }
+
+.archive-card:has(.archive-link) { cursor: pointer; }
+
+.archive-card:has(.archive-link):hover .archive-link {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.archive-link:focus-visible { outline: none; }
+
+.archive-card:has(.archive-link:focus-visible) {
+  outline: 3px solid var(--cyan);
+  outline-offset: 3px;
+}
+
 .archive-author {
   font-size: 13px;
   color: var(--text-muted);
