@@ -1326,6 +1326,62 @@ footer {
 }
 
 /* ============================================================
+   SOLD-OUT TICKET STATE
+   Usage: add .is-sold-out to the card, add
+   <span class="sold-out-stamp">Elfogyott</span> as first child,
+   and replace the buy link with <span class="btn btn-soldout">Elfogyott</span>
+   ============================================================ */
+.event-ticket-card.is-sold-out,
+.ticket-card.is-sold-out {
+  pointer-events: none;
+  background: rgba(255,255,255,0.025);
+  border: 1px dashed rgba(255,255,255,0.14);
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.is-sold-out > *:not(.sold-out-stamp) {
+  filter: grayscale(1);
+  opacity: 0.38;
+}
+
+.is-sold-out .ticket-price { text-decoration: line-through; text-decoration-thickness: 2px; }
+.is-sold-out .tick { color: var(--text-muted); }
+.is-sold-out .event-ticket-badge,
+.is-sold-out .popular-badge { background: var(--text-muted); }
+
+.sold-out-stamp {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-12deg);
+  padding: 8px 22px;
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--pink);
+  border: 3px solid var(--pink);
+  border-radius: 10px;
+  background: rgba(6,0,14,0.72);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 28px var(--pink-glow);
+  z-index: 2;
+}
+
+.btn.btn-soldout {
+  margin-top: 16px;
+  width: 100%;
+  background: transparent;
+  color: var(--text-subtle);
+  border: 1px solid var(--card-border);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
@@ -1805,4 +1861,23 @@ footer {
 
 @media (max-width: 480px) {
   .social-follow-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+
+/* Sold-out ticket state – light scheme */
+[data-theme="light"] .event-ticket-card.is-sold-out,
+[data-theme="light"] .ticket-card.is-sold-out {
+  background: rgba(21,0,37,0.035);
+  border: 1px dashed rgba(21,0,37,0.22);
+}
+[data-theme="light"] .is-sold-out > *:not(.sold-out-stamp) { opacity: 0.5; }
+[data-theme="light"] .sold-out-stamp {
+  color: #C4005F;
+  border-color: #C4005F;
+  background: rgba(248,243,255,0.88);
+  box-shadow: 0 4px 18px rgba(196,0,95,0.18);
+}
+[data-theme="light"] .btn.btn-soldout {
+  color: rgba(21,0,37,0.38);
+  border-color: rgba(21,0,37,0.14);
+  background: rgba(21,0,37,0.03);
 }
